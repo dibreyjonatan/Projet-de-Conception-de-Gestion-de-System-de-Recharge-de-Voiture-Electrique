@@ -1,0 +1,2 @@
+lecteurcarte.o: lecteurcarte.c lecteurcarte.h
+borne.o: borne.c lecteurcarte.h

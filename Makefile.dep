@@ -1,4 +1,6 @@
-borne.o: borne.c lecteurcarte.h baseclient.h voyant.h
+borne.o: borne.c lecteurcarte.h baseclient.h voyant.h timer.h
 baseclient.o: baseclient.c baseclient.h
 voyant.o: voyant.c voyant.h
+button.o: button.c button.h
 lecteurcarte.o: lecteurcarte.c lecteurcarte.h
+timer.o: timer.c timer.h

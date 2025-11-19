@@ -9,7 +9,6 @@ int baseclient_authentifier(int num){
    while(fscanf(fich,"%d\n",&numero_r)==1)
 {
    if(numero_r==num) {
-    printf("found here\n") ;
     fclose(fich) ;
     return 1 ;
 }

@@ -1,3 +1,4 @@
-borne.o: borne.c lecteurcarte.h baseclient.h
+borne.o: borne.c lecteurcarte.h baseclient.h voyant.h
 baseclient.o: baseclient.c baseclient.h
+voyant.o: voyant.c voyant.h
 lecteurcarte.o: lecteurcarte.c lecteurcarte.h

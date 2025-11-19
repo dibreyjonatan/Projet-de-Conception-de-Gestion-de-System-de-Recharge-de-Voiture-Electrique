@@ -3,6 +3,7 @@
 
 #include "lecteurcarte.h"
 #include "baseclient.h"
+#include "voyant.h"
 
 int main()
 {
@@ -16,6 +17,16 @@ int main()
         printf("numero lu est : %d\n",numero); 
         int found=baseclient_authentifier(numero);
         printf("resultat authentification : %d\n",found) ;
+        // echec d'authentification
+        if(found==0) {
+          voyant_blink_defaut(); 
+         break ;
+          }
+        voyant_blink_charge();
+
+        //  voyant_set_charge(VERT);
+ 
+        
     }
 
 }

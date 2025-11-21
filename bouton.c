@@ -8,5 +8,9 @@ int button_appuie_button_charge(){
     return ( io_b -> bouton_charge ) ;
 }
 
-int button_apppuie_button_stop() ;
+int button_apppuie_button_stop() {
+
+    io_b= acces_memoire(&shmid_b) ;
+    return ( io_b -> bouton_stop ) ;
+}
 

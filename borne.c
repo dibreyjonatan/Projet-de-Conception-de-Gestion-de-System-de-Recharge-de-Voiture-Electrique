@@ -6,6 +6,8 @@
 #include "voyant.h"
 #include "timer.h"
 #include "bouton.h"
+#include "prise.h"
+#include "generateur_save.h"
 
 
 int main()
@@ -50,10 +52,24 @@ int main()
            }
 
           if(butt_apuie==1) printf("le button n'a pas été appuyer durant les 1mins") ;
-          else{
+         /* else{
                  voyant_set_dispo(OFF);
-            }        
-        
+            } */       
+        //si le button a été appuyer durant les 1 mins, on demarre le cycle de charge
+        voyant_set_charge(ROUGE) ;
+	generateur_save_generer_pwm(DC) ;
+ 	prise_deverrouille_trappe();
+	
+          
+           int d= 0 ;
+             // Atente de branchement de la prise par l'utilisateur 
+           while(1){
+            d=generateur_save_tension_DC();
+            sleep(10);
+           printf("tension: %d\n",d);
+            if(d==9) break ; 
+            }
+            prise_set_prise(VERT) ;
     }
 
 }

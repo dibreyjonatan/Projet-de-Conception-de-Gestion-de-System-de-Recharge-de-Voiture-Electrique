@@ -7,9 +7,12 @@
 #include <unistd.h>
 
 
-int button_appuie_button_charge();
-int button_apppuie_button_stop() ;
+int bouton_appuie_button_charge();
+int bouton_apppuie_button_stop() ;
 
+void bouton_set_bouton_charge();
+
+void bouton_set_bouton_stop();
 
 
 #endif 

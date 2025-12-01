@@ -55,7 +55,7 @@ int main()
            }
 
           if(butt_apuie==1) {
-          printf("le button n'a pas été appuyer durant les 1mins") ;
+          printf("le button n'a pas été appuyer durant les 1mins\n") ;
           etat_suivant=etat0 ;
            break ;
           }
@@ -64,7 +64,9 @@ int main()
             } */       
         //si le button a été appuyer durant les 1 mins, on demarre le cycle de charge
       case etat1 :  
+           bouton_set_bouton_charge(); //mise à zéro logiciellement
            voyant_set_charge(ROUGE) ;
+           voyant_set_dispo(OFF); 
 	       generateur_save_generer_pwm(DC) ;
  	       prise_deverrouille_trappe();
 	       
@@ -75,22 +77,53 @@ int main()
           
            break ; 
       case etat2 :
-             
              prise_set_prise(VERT) ;
-              etat_suivant=etat0 ;
+             generateur_save_generer_pwm(AC_1K) ;
+             generateur_save_ouvrir_contacteur();
+             if(generateur_save_tension_DC()==6)
+               etat_suivant=etat3 ;
+             else etat_suivant=etat2 ; 
+               sleep(2) ;
               break ;
-                   
-           /*   
-           int d= 0 ;
-             // Atente de branchement de la prise par l'utilisateur 
-           while(1){
-            d=generateur_save_tension_DC();
-            sleep(10);
-           printf("tension: %d\n",d);
-            if(d==9) break ; 
-            }
-            prise_set_prise(VERT) ;
-            */
+              //charge du vehicule
+       case etat3 :
+             generateur_save_generer_pwm(AC_CL) ;
+             generateur_save_fermer_contacteur();
+             
+              if(generateur_save_tension_DC()==9)
+               etat_suivant=etat4;
+             else etat_suivant=etat3; 
+               sleep(2) ;
+             break ;
+             //fin de la recharge et reprise du véhicule selon le usecase 1
+       case etat4 : 
+             printf(" fin de la recharge \n") ; 
+             voyant_set_charge(VERT) ;
+             generateur_save_ouvrir_contacteur();
+	         generateur_save_generer_pwm(DC) ;
+ 	         
+              if(generateur_save_tension_DC()==12)
+               etat_suivant=etat5;
+             else etat_suivant=etat4; 
+               sleep(2) ;
+             break ; 
+       case etat5 :
+            voyant_set_charge(OFF) ;
+            generateur_save_generer_pwm(DC) ;
+            prise_set_prise(OFF) ;
+            prise_verrouille_trappe();
+            if(generateur_save_tension_DC()==12)
+               etat_suivant=etat6;
+            else etat_suivant=etat5;    
+            sleep(2) ;
+            break ;
+       case etat6 :
+            voyant_set_dispo(VERT); 
+            etat_suivant=etat0 ; 
+            break ; 
+                                         
+          
+          
             
             }
             

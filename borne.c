@@ -18,7 +18,7 @@ int main()
 
      etatsystem etat_present, etat_suivant ;
       etat_present=etat_suivant=etat0 ;
-    
+     bouton_set_bouton_stop();
     while (1)
     { 
       switch(etat_present){
@@ -53,12 +53,12 @@ int main()
           // detection apuie button en 60s
             int butt_apuie=1 ;
           while(timer_secs<60 && butt_apuie==1){
-           printf("secondes recu du timer :%d",timer_secs) ; 
+           printf("secondes recu du timer :%d\n",timer_secs) ; 
            timer_secs+=timer_count_sec() ;
              int sortie=bouton_appuie_button_charge();
               if(sortie==1 ) {
                 butt_apuie=0 ;
-		printf("le bouton a ete appuyer\n");
+		            printf("le bouton a ete appuyer\n");
 		        etat_suivant=etat1 ;
                  break;
             }
@@ -69,9 +69,7 @@ int main()
           etat_suivant=etat0 ;
            break ;
           }
-         /* else{
-                 voyant_set_dispo(OFF);
-            } */       
+              
         //si le button a été appuyer durant les 1 mins, on demarre le cycle de charge
       case etat1 :  
            bouton_set_bouton_charge(); //mise à zéro logiciellement
@@ -86,7 +84,14 @@ int main()
           sleep(2) ;
           
            break ; 
-      case etat2 :
+      case etat2 : //prise branché 
+             if(bouton_apppuie_button_stop()){
+               printf("stop appuyer\n");
+                bouton_set_bouton_stop();
+               etat_suivant=etat5 ;
+               break ; 
+             }
+             
              prise_set_prise(VERT) ;
              generateur_save_generer_pwm(AC_1K) ;
              generateur_save_ouvrir_contacteur();
@@ -95,8 +100,15 @@ int main()
              else etat_suivant=etat2 ; 
                sleep(2) ;
               break ;
-              //charge du vehicule
-       case etat3 :
+              
+       case etat3 : //charge du vehicule
+               if(bouton_apppuie_button_stop()){
+               printf("stop appuyer\n");
+                bouton_set_bouton_stop();
+               etat_suivant=etat5 ;
+               break ;
+             }
+             
              generateur_save_generer_pwm(AC_CL) ;
              generateur_save_fermer_contacteur();
              
@@ -108,6 +120,14 @@ int main()
              //fin de la recharge et reprise du véhicule selon le usecase 1
        case etat4 : 
              printf(" fin de la recharge \n") ; 
+
+              if(bouton_apppuie_button_stop()){
+               printf("stop appuyer\n");
+                bouton_set_bouton_stop();
+               etat_suivant=etat5 ;
+               break ;
+             }
+            
              voyant_set_charge(VERT) ;
              generateur_save_ouvrir_contacteur();
 	         generateur_save_generer_pwm(DC) ;
@@ -121,14 +141,17 @@ int main()
             voyant_set_charge(OFF) ;
             generateur_save_generer_pwm(DC) ;
             prise_set_prise(OFF) ;
-            prise_verrouille_trappe();
+            
             if(generateur_save_tension_DC()==12)
                etat_suivant=etat6;
             else etat_suivant=etat5;    
             sleep(2) ;
             break ;
        case etat6 :
+            prise_verrouille_trappe();
             voyant_set_dispo(VERT); 
+            generateur_save_ouvrir_contacteur(); //on ferme le contacteur AC, cette ligne a été ajouter pour une gestion efficace de UC3
+            generateur_save_generer_pwm(OFF) ; //on éteint l'alimentation et on attend le prochain client
             etat_suivant=etat0 ; 
             break ; 
                                          
@@ -141,6 +164,8 @@ int main()
             }
             
             etat_present=etat_suivant ;
+            
+            
     }
 
 }

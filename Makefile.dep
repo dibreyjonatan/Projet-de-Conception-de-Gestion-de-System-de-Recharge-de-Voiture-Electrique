@@ -1,0 +1,9 @@
+lecteurcarte.o: lecteurcarte.c lecteurcarte.h \
+ /shared/TCii/include/lcarte.h baseclient.h \
+ /shared/TCii/include/donnees_borne.h
+borne.o: borne.c /shared/TCii/include/memoire_borne.h \
+ /shared/TCii/include/donnees_borne.h \
+ /shared/TCii/include/donnees_borne.h lecteurcarte.h \
+ /shared/TCii/include/lcarte.h baseclient.h
+baseclient.o: baseclient.c baseclient.h
+voyants.o: voyants.c voyants.h

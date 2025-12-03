@@ -18,6 +18,7 @@ int main()
 
      etatsystem etat_present, etat_suivant ;
       etat_present=etat_suivant=etat0 ;
+      int id=0,data ; //pour la reprise vehicule //id pour le nombre de fois qu'il va interroger le client  // data pour la lecture 
      bouton_set_bouton_stop();
     while (1)
     { 
@@ -79,7 +80,10 @@ int main()
  	       prise_deverrouille_trappe();
 	       
           if(generateur_save_tension_DC()==9)
+           {
+              prise_set_prise(VERT) ;
              etat_suivant=etat2 ;
+           }
           else etat_suivant=etat1 ; 
           sleep(2) ;
           
@@ -89,12 +93,15 @@ int main()
                printf("stop appuyer\n");
                 bouton_set_bouton_stop();
                etat_suivant=etat5 ;
+               generateur_save_generer_pwm(STOP) ;
+               id=0 ;
                break ; 
              }
              
-             prise_set_prise(VERT) ;
+             //prise_set_prise(VERT) ;
              generateur_save_generer_pwm(AC_1K) ;
              generateur_save_ouvrir_contacteur();
+              prise_verrouille_trappe();
              if(generateur_save_tension_DC()==6)
                etat_suivant=etat3 ;
              else etat_suivant=etat2 ; 
@@ -106,53 +113,78 @@ int main()
                printf("stop appuyer\n");
                 bouton_set_bouton_stop();
                etat_suivant=etat5 ;
+                generateur_save_generer_pwm(STOP) ;
+               id=0 ;
                break ;
              }
-             
+            
              generateur_save_generer_pwm(AC_CL) ;
              generateur_save_fermer_contacteur();
              
               if(generateur_save_tension_DC()==9)
-               etat_suivant=etat4;
+               {etat_suivant=etat4; id=0; }
              else etat_suivant=etat3; 
                sleep(2) ;
              break ;
              //fin de la recharge et reprise du véhicule selon le usecase 1
        case etat4 : 
              printf(" fin de la recharge \n") ; 
+                if(id==0){
 
+            printf("veuillez vous authentifier à nouveau pour récupérer votre véhicule \n");
+            scanf("%d",&data);
+            if(numero!= data) {
+            etat_suivant=etat4;   
+              break ; 
+            }
+            else id=1 ;
+            }
               if(bouton_apppuie_button_stop()){
                printf("stop appuyer\n");
                 bouton_set_bouton_stop();
                etat_suivant=etat5 ;
+                id=0 ;
                break ;
              }
-            
+             prise_deverrouille_trappe();
              voyant_set_charge(VERT) ;
              generateur_save_ouvrir_contacteur();
 	         generateur_save_generer_pwm(DC) ;
  	         
               if(generateur_save_tension_DC()==12)
-               etat_suivant=etat5;
+               { etat_suivant=etat5; }
              else etat_suivant=etat4; 
                sleep(2) ;
              break ; 
-       case etat5 :
+       case etat5 : //reprise vehicule 
+            if(id==0){
+
+            printf("veuillez vous authentifier à nouveau pour récupérer votre véhicule \n");
+            scanf("%d",&data);
+            if(numero!= data) {
+            etat_suivant=etat5;   
+              break ;
+            }
+            else id=1 ;
+            }
+            prise_deverrouille_trappe();
             voyant_set_charge(OFF) ;
             generateur_save_generer_pwm(DC) ;
             prise_set_prise(OFF) ;
-            
+             //prise_verrouille_trappe();
             if(generateur_save_tension_DC()==12)
                etat_suivant=etat6;
             else etat_suivant=etat5;    
             sleep(2) ;
             break ;
        case etat6 :
+           
             prise_verrouille_trappe();
             voyant_set_dispo(VERT); 
             generateur_save_ouvrir_contacteur(); //on ferme le contacteur AC, cette ligne a été ajouter pour une gestion efficace de UC3
-            generateur_save_generer_pwm(OFF) ; //on éteint l'alimentation et on attend le prochain client
+            generateur_save_generer_pwm(STOP) ; //on éteint l'alimentation et on attend le prochain client
             etat_suivant=etat0 ; 
+           
             break ; 
                                          
       // cas operateur :

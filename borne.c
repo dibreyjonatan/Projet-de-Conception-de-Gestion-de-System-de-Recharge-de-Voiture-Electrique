@@ -99,9 +99,10 @@ int main()
              }
              
              //prise_set_prise(VERT) ;
+             prise_verrouille_trappe();
              generateur_save_generer_pwm(AC_1K) ;
              generateur_save_ouvrir_contacteur();
-              prise_verrouille_trappe();
+             
              if(generateur_save_tension_DC()==6)
                etat_suivant=etat3 ;
              else etat_suivant=etat2 ; 

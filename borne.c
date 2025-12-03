@@ -9,7 +9,10 @@
 #include "prise.h"
 #include "generateur_save.h"
 
-typedef enum { etat0, etat1, etat2, etat3, etat4, etat5, etat6 } etatsystem ;
+typedef enum { etat0, etat1, etat2, etat3, etat4, etat5, etat6,etat255 } etatsystem ;
+
+void administration_operateur(); 
+
 int main()
 {
 
@@ -23,6 +26,13 @@ int main()
         lecteurcarte_initialiser();
         int numero=lecteurcarte_lire_carte();
         printf("numero lu est : %d\n",numero); 
+
+        if(numero==255){
+         
+         etat_suivant=etat255 ;
+         break ; 
+        }
+        
         int found=baseclient_authentifier(numero);
         printf("resultat authentification : %d\n",found) ;
         // echec d'authentification
@@ -122,12 +132,36 @@ int main()
             etat_suivant=etat0 ; 
             break ; 
                                          
-          
-          
-            
+      // cas operateur :
+      case etat255 :
+            administration_operateur();
+            etat_suivant=etat0 ;
+            break ;
+
             }
             
             etat_present=etat_suivant ;
     }
 
+}
+
+void administration_operateur(){
+
+  int c ;
+  printf("Bienvenue Operateur : \n");
+  printf(" Tapez 1, si vous voulez ajouter un nouveau client \n");
+  printf("Tapez 2, si vous voulez supprimer un client \n");
+  printf("Entrez votre choix : ");
+  scanf("%d",&c);
+
+  if(c==1){
+    printf("\n Veuillez entrer le numero du client à ajouter\n");
+    scanf("%d",&c);
+    baseclient_ajoutclient(c);
+  }
+  if(c==2){
+    printf("\n Veuillez entrer le numero du client à supprimer\n");
+    scanf("%d",&c);
+    baseclient_supprimeclient(c);
+  }
 }

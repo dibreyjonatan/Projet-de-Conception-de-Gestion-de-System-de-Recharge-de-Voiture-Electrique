@@ -1,5 +1,20 @@
+/**
+*@file baseclient.c 
+*@brief Ici on a les fonctions qui permettent de faire la gestion des clients.
+*/
 #include <baseclient.h>
+/**
 
+*@brief Authentifier le client qui se presente.
+*@details 
+* Dans cette fonction on ouvre la base de données database.txt on vérifie si le numéro entrer par le client
+* est présent dans la base de donnée.
+*@param[in] num c'est l'id du client à faire valider 
+*@return int 
+*@retval 1 si le client est dans la base de données 
+*@retval 0 si le client ne figure pas dans la base de donné
+
+*/
 int baseclient_authentifier(int num){
 
   FILE* fich = fopen("database.txt","r") ;
@@ -20,6 +35,17 @@ int baseclient_authentifier(int num){
   return 0 ;
 
 }
+/**
+
+*@brief Ajout un client dans la base de donnée
+*@details 
+* Dans cette fonction on ouvre la base de données, on vérifie si le numéro client à ajouter
+* n'est pas dans la base de donnée et après on l'ajoute.
+* si le client est présent, on signal à l'opérateur que ce numéro est déjà présent dans la base de donnée.
+*@param[in] num c'est l'id du client à ajouter 
+*@return void 
+
+*/
 void baseclient_ajoutclient(int k){
    if(k!=255){
   if(baseclient_authentifier(k)) printf("\nLe client que vous essayez d'ajouter figure déjà dans la liste\n");
@@ -37,6 +63,18 @@ else{
      printf("Vous ne pouvez pas ajouter ce numéro\n");
    }
 }
+/**
+
+*@brief Supprime un client de la base de donnée
+*@details 
+* Dans cette fonction on créer un fichier temporaire et à la fin on supprime l'ancienne base de donnée et on renome le fichier temporaire en  notre fichier base de donnée.
+* Ce fichier temporaire nous permet de transférer les numeros de clients qui sont différent du numéro à supprimer.
+* Si le client à supprimer ne figure pas dans la base de donnée on le notifie à l'opérateur
+* Si la suppression a reussit, on le signale à l'opérateur 
+*@param[in] num c'est l'id du client à supprimer
+*@return void 
+
+*/
 void baseclient_supprimeclient(int k){
 
   FILE* fich=fopen("database.txt","r");

@@ -1,3 +1,12 @@
+/**
+*@file borne.c
+*@brief borne.c est le fichier principale du système 
+*@author KAMDA TEZEBO DIBREY JONATAN
+*@author Nassime BOUANANI
+*@version 1.0
+*@date 03/12/2025
+*/
+
 #include <memoire_borne.h>
 #include <donnees_borne.h>
 
@@ -10,9 +19,38 @@
 #include "generateur_save.h"
 
 typedef enum { etat0, etat1, etat2, etat3, etat4, etat5, etat6,etat255 } etatsystem ;
-
+/**
+*@brief Fonction charger de gérer l'administration des clients une fois que l'operateur met son id 
+*@note Cette fonction est utilisé pour le cas etat255 
+*@details 
+* Cette fonction demande à l'opérateur de saisir le choix de l'opération qu'il aimerait faire soit ajout ou suppression de client
+* par la suite, l'opérateur fait entrer le numéro du client correspondant 
+* ensuite elle fait appels aux fonctions de baseclient_ajoutclient(int) ou baseclient_supprimeclient(int) selon le besoin.
+*@return void  
+*/
 void administration_operateur(); 
+/**
+*@brief la fonction principale de tout le système, c'est ici qu'est implementer la machine à état decrivant le système
+*@note dans le main, une boucle infinie est faite !
+*@details 
+* Dans cette fonction on implemente la machine à état en utilisant switch case.
+* Les cas sont extraites de la machine à état.
+* dans la fonction on definit deux états, état_present et état_suivant 
+* Pour évoluer d'un état à un autre, état_present prend la valeur de état_suivant
+* état0 on demande à l'utilisateur d'entrer son numéro et s'assure qu'il clique sur button charge en moins de 1 min
+* état1 on attent que l'utilisateur branche la prise 
+* état2 c'est la prise branché 
+* état3 c'est la charge du véhicule 
+* état4 c'est la fin de charge 
+* état5 c'est la récupération du véhicule 
+* état6 c'est la mise en place du système comme s'il était à l'état initiale 
+* état255 c'est l'état de gestion de l'administration par l'opérateur
+*@warning l'état initiale dont fait référence l'état6 est différent de état0 car c'est 
+* l'état de démarrage du système avant l'attente des identifiants du client.
+*@return int 
+*@retval 0 en cas de succès d'execution 
 
+*/
 int main()
 {
 
@@ -200,7 +238,7 @@ int main()
             
             
     }
-
+    return 0 ;
 }
 
 void administration_operateur(){

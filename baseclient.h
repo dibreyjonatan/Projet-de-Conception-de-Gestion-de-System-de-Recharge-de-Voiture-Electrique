@@ -3,6 +3,6 @@
 #include <stdio.h>
 
 int baseclient_authentifier(int);
-int baseclient_ajoutclient(int);
-int baseclient_supprimeclient(int);
+void baseclient_ajoutclient(int);
+void baseclient_supprimeclient(int);
 #endif 

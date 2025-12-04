@@ -42,9 +42,10 @@ int baseclient_authentifier(int num){
 * Dans cette fonction on ouvre la base de données, on vérifie si le numéro client à ajouter
 * n'est pas dans la base de donnée et après on l'ajoute.
 * si le client est présent, on signal à l'opérateur que ce numéro est déjà présent dans la base de donnée.
-*@param[in] num c'est l'id du client à ajouter 
+*@param[in] k c'est l'id du client à ajouter 
 *@return void 
-
+*@par variables internes utilisées
+*@li fich : pointeur de type FILE vers le fichier de la base de donnée
 */
 void baseclient_ajoutclient(int k){
    if(k!=255){
@@ -71,8 +72,13 @@ else{
 * Ce fichier temporaire nous permet de transférer les numeros de clients qui sont différent du numéro à supprimer.
 * Si le client à supprimer ne figure pas dans la base de donnée on le notifie à l'opérateur
 * Si la suppression a reussit, on le signale à l'opérateur 
-*@param[in] num c'est l'id du client à supprimer
+*@param[in] k c'est l'id du client à supprimer
 *@return void 
+*@par variables internes utilisées
+*@li fich : pointeur de type FILE vers le fichier de la base de donnée
+*@li tmp_data : pointeur de type FILE vers le fichier temporaire
+*@li val : variable qui permet de lire les numéros dans la base de donnée
+*@li found : variable qui permet de savoir si le client à supprimer est dans la base de donnée ou pas  
 
 */
 void baseclient_supprimeclient(int k){

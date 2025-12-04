@@ -1,3 +1,7 @@
+/**
+ * @file prise.h
+ * @brief Dans ce fichier on déclare les fonctions pour la gestion de la prise
+ */
 #ifndef PRISE_H
 #define PRISE_H
 

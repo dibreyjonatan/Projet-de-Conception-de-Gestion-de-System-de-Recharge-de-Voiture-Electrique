@@ -1,3 +1,7 @@
+/**
+*@file voyant.h
+*@brief Dans ce fichier on déclare les fonctions pour la gestion des voyants
+*/
 #ifndef VOYANT_H
 #define VOYANT_H
 

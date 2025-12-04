@@ -1,3 +1,7 @@
+/**
+ * @file generateur_save.h
+ * @brief Dans ce fichier on déclare les fonctions pour la gestion du générateur save
+ */
 #ifndef GENERATEUR_SAVE_H
 #define GENERATEUR_SAVE_H
 

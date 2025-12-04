@@ -18,6 +18,10 @@
 #include "prise.h"
 #include "generateur_save.h"
 
+/**
+ * @brief Définition des états du système de recharge
+ *  On déclare une énumération pour représenter les différents états du système de recharge de véhicule électrique.
+ */
 typedef enum { etat0, etat1, etat2, etat3, etat4, etat5, etat6,etat255 } etatsystem ;
 /**
 *@brief Fonction charger de gérer l'administration des clients une fois que l'operateur met son id 
@@ -26,14 +30,16 @@ typedef enum { etat0, etat1, etat2, etat3, etat4, etat5, etat6,etat255 } etatsys
 * Cette fonction demande à l'opérateur de saisir le choix de l'opération qu'il aimerait faire soit ajout ou suppression de client
 * par la suite, l'opérateur fait entrer le numéro du client correspondant 
 * ensuite elle fait appels aux fonctions de baseclient_ajoutclient(int) ou baseclient_supprimeclient(int) selon le besoin.
+*@par Variables internes utilisées :
+*@li c : variable de type int pour stocker le choix de l'opération et le numéro du client
 *@return void  
 */
 void administration_operateur(); 
 /**
-*@brief la fonction principale de tout le système, c'est ici qu'est implementer la machine à état decrivant le système
+*@brief la fonction principale de tout le système, c'est ici qu'est implementée la machine à état decrivant le système
 *@note dans le main, une boucle infinie est faite !
 *@details 
-* Dans cette fonction on implemente la machine à état en utilisant switch case.
+* Dans cette fonction on implemente la machine à état en utilisant switch case et etatsystem.
 * Les cas sont extraites de la machine à état.
 * dans la fonction on definit deux états, état_present et état_suivant 
 * Pour évoluer d'un état à un autre, état_present prend la valeur de état_suivant
@@ -47,6 +53,16 @@ void administration_operateur();
 * état255 c'est l'état de gestion de l'administration par l'opérateur
 *@warning l'état initiale dont fait référence l'état6 est différent de état0 car c'est 
 * l'état de démarrage du système avant l'attente des identifiants du client.
+*@par Variables internes utilisées :
+*@li etat_present : variable de type etatsystem qui stocke l'état actuel du système
+*@li etat_suivant : variable de type etatsystem qui stocke l'état suivant du système
+*@li id : variable de type int utilisée pour la gestion de l'authentification lors de la reprise du véhicule
+*@li data : variable entière int pour stocker le numéro entré par l'utilisateur lors de l'authentification
+*@li numero : variable entière int pour stocker le numéro lu par le lecteur de carte
+*@li found : variable entière int pour stocker le résultat de l'authentification du client
+*@li timer_secs : variable entière int pour stocker le temps écoulé en secondes
+*@li butt_apuie : variable entière int pour vérifier si le bouton charge a été appuyé
+
 *@return int 
 *@retval 0 en cas de succès d'execution 
 

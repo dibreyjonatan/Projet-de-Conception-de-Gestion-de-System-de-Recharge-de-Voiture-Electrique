@@ -1,3 +1,7 @@
+/**
+ * @file bouton.h
+ * @brief Dans ce fichier on déclare les fonctions pour la gestion des boutons
+ */
 #ifndef BUTTON_H
 #define BUTTON_H
 

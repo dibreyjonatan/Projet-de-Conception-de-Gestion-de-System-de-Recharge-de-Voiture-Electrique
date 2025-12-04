@@ -1,6 +1,11 @@
 
-*.pdf
-
+# Ignorer tous les pdfs incl.pdf et ne laisser que le pdf résultant dans le git
+*incl.pdf   
+#Ignorer la correction
+*etudiants.pdf
+#ignorer le fichier MEF
+MEF.pdf
+#ignorer les objets *.o
 *.o
-
+#ignorer le résultat html/
 html/

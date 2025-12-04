@@ -1,0 +1,88 @@
+\hypertarget{prise_8h}{}\doxysection{Référence du fichier prise.\+h}
+\label{prise_8h}\index{prise.h@{prise.h}}
+
+
+Dans ce fichier on déclare les fonctions pour la gestion de la prise.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$donnees\+\_\+borne.\+h$>$}\newline
+{\ttfamily \#include $<$memoire\+\_\+borne.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Graphe des dépendances par inclusion de prise.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prise_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{prise_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{prise_8h_af174bb9918661433bd60c26db2b0ffaf}{prise\+\_\+verrouille\+\_\+trappe}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction verouille la trappe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prise_8h_a8d41decfd5da78575dde8759cd66ef92}{prise\+\_\+deverrouille\+\_\+trappe}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction verouille la trappe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prise_8h_ac30a827eeae877118bc13c7f18833e4e}{prise\+\_\+set\+\_\+prise}} (led prise)
+\begin{DoxyCompactList}\small\item\em Cette fonction met la led à VERT ou ROUGE ou l\textquotesingle{}éteint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Dans ce fichier on déclare les fonctions pour la gestion de la prise. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{prise_8h_a8d41decfd5da78575dde8759cd66ef92}\label{prise_8h_a8d41decfd5da78575dde8759cd66ef92}} 
+\index{prise.h@{prise.h}!prise\_deverrouille\_trappe@{prise\_deverrouille\_trappe}}
+\index{prise\_deverrouille\_trappe@{prise\_deverrouille\_trappe}!prise.h@{prise.h}}
+\doxysubsubsection{\texorpdfstring{prise\_deverrouille\_trappe()}{prise\_deverrouille\_trappe()}}
+{\footnotesize\ttfamily void prise\+\_\+deverrouille\+\_\+trappe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction verouille la trappe. 
+
+Dans cette fonction on accède la mémoire partagée et on dévérouille la trappe en mettant la led à VERT \begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{prise_8h_ac30a827eeae877118bc13c7f18833e4e}\label{prise_8h_ac30a827eeae877118bc13c7f18833e4e}} 
+\index{prise.h@{prise.h}!prise\_set\_prise@{prise\_set\_prise}}
+\index{prise\_set\_prise@{prise\_set\_prise}!prise.h@{prise.h}}
+\doxysubsubsection{\texorpdfstring{prise\_set\_prise()}{prise\_set\_prise()}}
+{\footnotesize\ttfamily void prise\+\_\+set\+\_\+prise (\begin{DoxyParamCaption}\item[{led}]{prise }\end{DoxyParamCaption})}
+
+
+
+Cette fonction met la led à VERT ou ROUGE ou l\textquotesingle{}éteint. 
+
+Dans cette fonction on accède la mémoire partagée et on met la led à l\textquotesingle{}état souhaité 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em prise} & l\textquotesingle{}état souhaité de la led \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{prise_8h_af174bb9918661433bd60c26db2b0ffaf}\label{prise_8h_af174bb9918661433bd60c26db2b0ffaf}} 
+\index{prise.h@{prise.h}!prise\_verrouille\_trappe@{prise\_verrouille\_trappe}}
+\index{prise\_verrouille\_trappe@{prise\_verrouille\_trappe}!prise.h@{prise.h}}
+\doxysubsubsection{\texorpdfstring{prise\_verrouille\_trappe()}{prise\_verrouille\_trappe()}}
+{\footnotesize\ttfamily void prise\+\_\+verrouille\+\_\+trappe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction verouille la trappe. 
+
+Dans cette fonction on accède la mémoire partagée et on vérouille la trappe en mettant la led à OFF \begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}

@@ -1,0 +1,112 @@
+\hypertarget{bouton_8h}{}\doxysection{Référence du fichier bouton.\+h}
+\label{bouton_8h}\index{bouton.h@{bouton.h}}
+
+
+Dans ce fichier on déclare les fonctions pour la gestion des boutons.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$donnees\+\_\+borne.\+h$>$}\newline
+{\ttfamily \#include $<$memoire\+\_\+borne.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Graphe des dépendances par inclusion de bouton.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bouton_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{bouton_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{bouton_8h_a9a8f76931526736b37873fdd9c227376}{bouton\+\_\+appuie\+\_\+button\+\_\+charge}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction retourne la valeur du bouton charge. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{bouton_8h_a5f729ac6152c8bacf7884d6e81d65f77}{bouton\+\_\+apppuie\+\_\+button\+\_\+stop}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction retourne la valeur du bouton stop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bouton_8h_a0553138abbdb0a1a561ac29ece0aec78}{bouton\+\_\+set\+\_\+bouton\+\_\+charge}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction met l\textquotesingle{}état du bouton charge à 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bouton_8h_afef3f611dab8b00b7b9bafe33ed6e954}{bouton\+\_\+set\+\_\+bouton\+\_\+stop}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction met l\textquotesingle{}état du bouton stop à 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Dans ce fichier on déclare les fonctions pour la gestion des boutons. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{bouton_8h_a5f729ac6152c8bacf7884d6e81d65f77}\label{bouton_8h_a5f729ac6152c8bacf7884d6e81d65f77}} 
+\index{bouton.h@{bouton.h}!bouton\_apppuie\_button\_stop@{bouton\_apppuie\_button\_stop}}
+\index{bouton\_apppuie\_button\_stop@{bouton\_apppuie\_button\_stop}!bouton.h@{bouton.h}}
+\doxysubsubsection{\texorpdfstring{bouton\_apppuie\_button\_stop()}{bouton\_apppuie\_button\_stop()}}
+{\footnotesize\ttfamily int bouton\+\_\+apppuie\+\_\+button\+\_\+stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction retourne la valeur du bouton stop. 
+
+On accède la mémoire partagée shmid et ensuite on lit dans cette mémoire la valeur du bouton stop \begin{DoxyReturn}{Renvoie}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Valeurs retournées}
+{\em 1} & si le client a appuyer \\
+\hline
+{\em 0} & si le client n\textquotesingle{}a pas appuyer \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{bouton_8h_a9a8f76931526736b37873fdd9c227376}\label{bouton_8h_a9a8f76931526736b37873fdd9c227376}} 
+\index{bouton.h@{bouton.h}!bouton\_appuie\_button\_charge@{bouton\_appuie\_button\_charge}}
+\index{bouton\_appuie\_button\_charge@{bouton\_appuie\_button\_charge}!bouton.h@{bouton.h}}
+\doxysubsubsection{\texorpdfstring{bouton\_appuie\_button\_charge()}{bouton\_appuie\_button\_charge()}}
+{\footnotesize\ttfamily int bouton\+\_\+appuie\+\_\+button\+\_\+charge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction retourne la valeur du bouton charge. 
+
+On accède la mémoire partagée shmid et ensuite on lit dans cette mémoire la valeur de la charge \begin{DoxyReturn}{Renvoie}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Valeurs retournées}
+{\em 1} & si le client a appuyer \\
+\hline
+{\em 0} & si le client n\textquotesingle{}a pas appuyer \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{bouton_8h_a0553138abbdb0a1a561ac29ece0aec78}\label{bouton_8h_a0553138abbdb0a1a561ac29ece0aec78}} 
+\index{bouton.h@{bouton.h}!bouton\_set\_bouton\_charge@{bouton\_set\_bouton\_charge}}
+\index{bouton\_set\_bouton\_charge@{bouton\_set\_bouton\_charge}!bouton.h@{bouton.h}}
+\doxysubsubsection{\texorpdfstring{bouton\_set\_bouton\_charge()}{bouton\_set\_bouton\_charge()}}
+{\footnotesize\ttfamily void bouton\+\_\+set\+\_\+bouton\+\_\+charge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction met l\textquotesingle{}état du bouton charge à 0. 
+
+On accède la mémoire partagée shmid et on écrit 0 sur cette mémoire \begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{bouton_8h_afef3f611dab8b00b7b9bafe33ed6e954}\label{bouton_8h_afef3f611dab8b00b7b9bafe33ed6e954}} 
+\index{bouton.h@{bouton.h}!bouton\_set\_bouton\_stop@{bouton\_set\_bouton\_stop}}
+\index{bouton\_set\_bouton\_stop@{bouton\_set\_bouton\_stop}!bouton.h@{bouton.h}}
+\doxysubsubsection{\texorpdfstring{bouton\_set\_bouton\_stop()}{bouton\_set\_bouton\_stop()}}
+{\footnotesize\ttfamily void bouton\+\_\+set\+\_\+bouton\+\_\+stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction met l\textquotesingle{}état du bouton stop à 0. 
+
+On accède la mémoire partagée shmid et on écrit 0 sur cette mémoire \begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}

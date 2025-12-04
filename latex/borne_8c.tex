@@ -1,0 +1,163 @@
+\hypertarget{borne_8c}{}\doxysection{Référence du fichier borne.\+c}
+\label{borne_8c}\index{borne.c@{borne.c}}
+
+
+\mbox{\hyperlink{borne_8c}{borne.\+c}} est le fichier principale du système  
+
+
+{\ttfamily \#include $<$memoire\+\_\+borne.\+h$>$}\newline
+{\ttfamily \#include $<$donnees\+\_\+borne.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lecteurcarte.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}baseclient.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}voyant.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}timer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bouton.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prise.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}generateur\+\_\+save.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de borne.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{borne_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786}{etatsystem}} \{ \newline
+\mbox{\hyperlink{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a01d023c92ad144f43f355bca8efaae9b}{etat0}}
+, \mbox{\hyperlink{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a93376ed46053d3ae6cdd2cb5cad24cf4}{etat1}}
+, \mbox{\hyperlink{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786ac0a3629a0182ed6d8fd812e86213c68c}{etat2}}
+, \mbox{\hyperlink{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a6b33b217ddfc58110f97266d5e471cb5}{etat3}}
+, \newline
+\mbox{\hyperlink{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a2bf0575f8d0eff0a480733bfd41a34e3}{etat4}}
+, \mbox{\hyperlink{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786ad94e338b4df3a6c47feb05ca520e154d}{etat5}}
+, \mbox{\hyperlink{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a39710b0b327b286fa96ecea73fb48b56}{etat6}}
+, \mbox{\hyperlink{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a5360748c87a70f1ba5af58295d9b49e0}{etat255}}
+ \}
+\begin{DoxyCompactList}\small\item\em Définition des états du système de recharge On déclare une énumération pour représenter les différents états du système de recharge de véhicule électrique. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{borne_8c_a94a81b82093f9d1f19cd0e6f7d21751c}{administration\+\_\+operateur}} ()
+\begin{DoxyCompactList}\small\item\em Fonction charger de gérer l\textquotesingle{}administration des clients une fois que l\textquotesingle{}operateur met son id. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{borne_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em la fonction principale de tout le système, c\textquotesingle{}est ici qu\textquotesingle{}est implementée la machine à état decrivant le système \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+\mbox{\hyperlink{borne_8c}{borne.\+c}} est le fichier principale du système 
+
+\begin{DoxyAuthor}{Auteur}
+KAMDA TEZEBO DIBREY JONATAN 
+
+Nassime BOUANANI 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+03/12/2025 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation du type de l\textquotesingle{}énumération}
+\mbox{\Hypertarget{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786}\label{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786}} 
+\index{borne.c@{borne.c}!etatsystem@{etatsystem}}
+\index{etatsystem@{etatsystem}!borne.c@{borne.c}}
+\doxysubsubsection{\texorpdfstring{etatsystem}{etatsystem}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786}{etatsystem}}}
+
+
+
+Définition des états du système de recharge On déclare une énumération pour représenter les différents états du système de recharge de véhicule électrique. 
+
+\begin{DoxyEnumFields}{Valeurs énumérées}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{etat0@{etat0}!borne.c@{borne.c}}\index{borne.c@{borne.c}!etat0@{etat0}}}\mbox{\Hypertarget{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a01d023c92ad144f43f355bca8efaae9b}\label{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a01d023c92ad144f43f355bca8efaae9b}} 
+etat0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{etat1@{etat1}!borne.c@{borne.c}}\index{borne.c@{borne.c}!etat1@{etat1}}}\mbox{\Hypertarget{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a93376ed46053d3ae6cdd2cb5cad24cf4}\label{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a93376ed46053d3ae6cdd2cb5cad24cf4}} 
+etat1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{etat2@{etat2}!borne.c@{borne.c}}\index{borne.c@{borne.c}!etat2@{etat2}}}\mbox{\Hypertarget{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786ac0a3629a0182ed6d8fd812e86213c68c}\label{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786ac0a3629a0182ed6d8fd812e86213c68c}} 
+etat2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{etat3@{etat3}!borne.c@{borne.c}}\index{borne.c@{borne.c}!etat3@{etat3}}}\mbox{\Hypertarget{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a6b33b217ddfc58110f97266d5e471cb5}\label{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a6b33b217ddfc58110f97266d5e471cb5}} 
+etat3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{etat4@{etat4}!borne.c@{borne.c}}\index{borne.c@{borne.c}!etat4@{etat4}}}\mbox{\Hypertarget{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a2bf0575f8d0eff0a480733bfd41a34e3}\label{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a2bf0575f8d0eff0a480733bfd41a34e3}} 
+etat4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{etat5@{etat5}!borne.c@{borne.c}}\index{borne.c@{borne.c}!etat5@{etat5}}}\mbox{\Hypertarget{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786ad94e338b4df3a6c47feb05ca520e154d}\label{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786ad94e338b4df3a6c47feb05ca520e154d}} 
+etat5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{etat6@{etat6}!borne.c@{borne.c}}\index{borne.c@{borne.c}!etat6@{etat6}}}\mbox{\Hypertarget{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a39710b0b327b286fa96ecea73fb48b56}\label{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a39710b0b327b286fa96ecea73fb48b56}} 
+etat6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{etat255@{etat255}!borne.c@{borne.c}}\index{borne.c@{borne.c}!etat255@{etat255}}}\mbox{\Hypertarget{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a5360748c87a70f1ba5af58295d9b49e0}\label{borne_8c_a9be325ed1142f6a6bb7bb9ec7bc9f786a5360748c87a70f1ba5af58295d9b49e0}} 
+etat255&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{borne_8c_a94a81b82093f9d1f19cd0e6f7d21751c}\label{borne_8c_a94a81b82093f9d1f19cd0e6f7d21751c}} 
+\index{borne.c@{borne.c}!administration\_operateur@{administration\_operateur}}
+\index{administration\_operateur@{administration\_operateur}!borne.c@{borne.c}}
+\doxysubsubsection{\texorpdfstring{administration\_operateur()}{administration\_operateur()}}
+{\footnotesize\ttfamily void administration\+\_\+operateur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction charger de gérer l\textquotesingle{}administration des clients une fois que l\textquotesingle{}operateur met son id. 
+
+\begin{DoxyNote}{Note}
+Cette fonction est utilisé pour le cas etat255
+\end{DoxyNote}
+Cette fonction demande à l\textquotesingle{}opérateur de saisir le choix de l\textquotesingle{}opération qu\textquotesingle{}il aimerait faire soit ajout ou suppression de client par la suite, l\textquotesingle{}opérateur fait entrer le numéro du client correspondant ensuite elle fait appels aux fonctions de \mbox{\hyperlink{baseclient_8h_a55f9bd63769ac952b997696b9640afae}{baseclient\+\_\+ajoutclient(int)}} ou \mbox{\hyperlink{baseclient_8h_a31439e9e3b761545805c1f04b98a75a3}{baseclient\+\_\+supprimeclient(int)}} selon le besoin. \begin{DoxyParagraph}{Variables internes utilisées \+:}
+\begin{DoxyItemize}
+\item c \+: variable de type int pour stocker le choix de l\textquotesingle{}opération et le numéro du client \end{DoxyItemize}
+
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Renvoie}
+void ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{borne_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{borne_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{borne.c@{borne.c}!main@{main}}
+\index{main@{main}!borne.c@{borne.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+la fonction principale de tout le système, c\textquotesingle{}est ici qu\textquotesingle{}est implementée la machine à état decrivant le système 
+
+\begin{DoxyNote}{Note}
+dans le main, une boucle infinie est faite !
+\end{DoxyNote}
+Dans cette fonction on implemente la machine à état en utilisant switch case et etatsystem. Les cas sont extraites de la machine à état. dans la fonction on definit deux états, état\+\_\+present et état\+\_\+suivant Pour évoluer d\textquotesingle{}un état à un autre, état\+\_\+present prend la valeur de état\+\_\+suivant état0 on demande à l\textquotesingle{}utilisateur d\textquotesingle{}entrer son numéro et s\textquotesingle{}assure qu\textquotesingle{}il clique sur button charge en moins de 1 min état1 on attent que l\textquotesingle{}utilisateur branche la prise état2 c\textquotesingle{}est la prise branché état3 c\textquotesingle{}est la charge du véhicule état4 c\textquotesingle{}est la fin de charge état5 c\textquotesingle{}est la récupération du véhicule état6 c\textquotesingle{}est la mise en place du système comme s\textquotesingle{}il était à l\textquotesingle{}état initiale état255 c\textquotesingle{}est l\textquotesingle{}état de gestion de l\textquotesingle{}administration par l\textquotesingle{}opérateur \begin{DoxyWarning}{Avertissement}
+l\textquotesingle{}état initiale dont fait référence l\textquotesingle{}état6 est différent de état0 car c\textquotesingle{}est l\textquotesingle{}état de démarrage du système avant l\textquotesingle{}attente des identifiants du client. 
+\end{DoxyWarning}
+\begin{DoxyParagraph}{Variables internes utilisées \+:}
+\begin{DoxyItemize}
+\item etat\+\_\+present \+: variable de type etatsystem qui stocke l\textquotesingle{}état actuel du système \item etat\+\_\+suivant \+: variable de type etatsystem qui stocke l\textquotesingle{}état suivant du système \item id \+: variable de type int utilisée pour la gestion de l\textquotesingle{}authentification lors de la reprise du véhicule \item data \+: variable entière int pour stocker le numéro entré par l\textquotesingle{}utilisateur lors de l\textquotesingle{}authentification \item numero \+: variable entière int pour stocker le numéro lu par le lecteur de carte \item found \+: variable entière int pour stocker le résultat de l\textquotesingle{}authentification du client \item timer\+\_\+secs \+: variable entière int pour stocker le temps écoulé en secondes \item butt\+\_\+apuie \+: variable entière int pour vérifier si le bouton charge a été appuyé\end{DoxyItemize}
+
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Renvoie}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Valeurs retournées}
+{\em 0} & en cas de succès d\textquotesingle{}execution \\
+\hline
+\end{DoxyRetVals}

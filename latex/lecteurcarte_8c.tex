@@ -1,0 +1,66 @@
+\hypertarget{lecteurcarte_8c}{}\doxysection{Référence du fichier lecteurcarte.\+c}
+\label{lecteurcarte_8c}\index{lecteurcarte.c@{lecteurcarte.c}}
+
+
+Dans ce fichier on fait la gestion du lecteur de carte.  
+
+
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lecteurcarte.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de lecteurcarte.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{lecteurcarte_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lecteurcarte_8c_a9da81b6eb527652d4eb6f8bb66f771f3}{lecteurcarte\+\_\+initialiser}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction initialise le lecteur de carte. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lecteurcarte_8c_a8c26ccbf49b09f1ee42250d71a7a0daa}{lecteurcarte\+\_\+lire\+\_\+carte}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction lit la valeur du numéro passé en paramètre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Dans ce fichier on fait la gestion du lecteur de carte. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{lecteurcarte_8c_a9da81b6eb527652d4eb6f8bb66f771f3}\label{lecteurcarte_8c_a9da81b6eb527652d4eb6f8bb66f771f3}} 
+\index{lecteurcarte.c@{lecteurcarte.c}!lecteurcarte\_initialiser@{lecteurcarte\_initialiser}}
+\index{lecteurcarte\_initialiser@{lecteurcarte\_initialiser}!lecteurcarte.c@{lecteurcarte.c}}
+\doxysubsubsection{\texorpdfstring{lecteurcarte\_initialiser()}{lecteurcarte\_initialiser()}}
+{\footnotesize\ttfamily void lecteurcarte\+\_\+initialiser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction initialise le lecteur de carte. 
+
+Cette fonction affiche un message demandant a l\textquotesingle{}utilisateur d\textquotesingle{}insérer une carte \begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lecteurcarte_8c_a8c26ccbf49b09f1ee42250d71a7a0daa}\label{lecteurcarte_8c_a8c26ccbf49b09f1ee42250d71a7a0daa}} 
+\index{lecteurcarte.c@{lecteurcarte.c}!lecteurcarte\_lire\_carte@{lecteurcarte\_lire\_carte}}
+\index{lecteurcarte\_lire\_carte@{lecteurcarte\_lire\_carte}!lecteurcarte.c@{lecteurcarte.c}}
+\doxysubsubsection{\texorpdfstring{lecteurcarte\_lire\_carte()}{lecteurcarte\_lire\_carte()}}
+{\footnotesize\ttfamily int lecteurcarte\+\_\+lire\+\_\+carte (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction lit la valeur du numéro passé en paramètre. 
+
+Cette fonction affiche un message demandant a l\textquotesingle{}utilisateur d\textquotesingle{}insérer une carte \begin{DoxyParagraph}{variable internes utilisées}
+int num \+: le numero de la carte insérée 
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Renvoie}
+int le numero de la carte inserée 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Valeurs retournées}
+{\em num} & le numero de la carte inserée \\
+\hline
+\end{DoxyRetVals}

@@ -1,0 +1,114 @@
+\hypertarget{prise_8c}{}\doxysection{Référence du fichier prise.\+c}
+\label{prise_8c}\index{prise.c@{prise.c}}
+
+
+Dans ce fichier on fait la gestion de la prise.  
+
+
+{\ttfamily \#include \char`\"{}prise.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de prise.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prise_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{prise_8c_af174bb9918661433bd60c26db2b0ffaf}{prise\+\_\+verrouille\+\_\+trappe}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction verouille la trappe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prise_8c_a8d41decfd5da78575dde8759cd66ef92}{prise\+\_\+deverrouille\+\_\+trappe}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction verouille la trappe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prise_8c_ac30a827eeae877118bc13c7f18833e4e}{prise\+\_\+set\+\_\+prise}} (led prise)
+\begin{DoxyCompactList}\small\item\em Cette fonction met la led à VERT ou ROUGE ou l\textquotesingle{}éteint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+entrees $\ast$ \mbox{\hyperlink{prise_8c_a161377ab848ef62783003ff7f306e8b8}{io\+\_\+p}}
+\begin{DoxyCompactList}\small\item\em variable globale de \mbox{\hyperlink{prise_8c}{prise.\+c}} pour la gestion mémoire partagée \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prise_8c_aa2c72f3f882c84799e0cb433697038f0}{shmid\+\_\+p}}
+\begin{DoxyCompactList}\small\item\em variable globale de \mbox{\hyperlink{prise_8c}{prise.\+c}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Dans ce fichier on fait la gestion de la prise. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{prise_8c_a8d41decfd5da78575dde8759cd66ef92}\label{prise_8c_a8d41decfd5da78575dde8759cd66ef92}} 
+\index{prise.c@{prise.c}!prise\_deverrouille\_trappe@{prise\_deverrouille\_trappe}}
+\index{prise\_deverrouille\_trappe@{prise\_deverrouille\_trappe}!prise.c@{prise.c}}
+\doxysubsubsection{\texorpdfstring{prise\_deverrouille\_trappe()}{prise\_deverrouille\_trappe()}}
+{\footnotesize\ttfamily void prise\+\_\+deverrouille\+\_\+trappe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction verouille la trappe. 
+
+Dans cette fonction on accède la mémoire partagée et on dévérouille la trappe en mettant la led à VERT \begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{prise_8c_ac30a827eeae877118bc13c7f18833e4e}\label{prise_8c_ac30a827eeae877118bc13c7f18833e4e}} 
+\index{prise.c@{prise.c}!prise\_set\_prise@{prise\_set\_prise}}
+\index{prise\_set\_prise@{prise\_set\_prise}!prise.c@{prise.c}}
+\doxysubsubsection{\texorpdfstring{prise\_set\_prise()}{prise\_set\_prise()}}
+{\footnotesize\ttfamily void prise\+\_\+set\+\_\+prise (\begin{DoxyParamCaption}\item[{led}]{prise }\end{DoxyParamCaption})}
+
+
+
+Cette fonction met la led à VERT ou ROUGE ou l\textquotesingle{}éteint. 
+
+Dans cette fonction on accède la mémoire partagée et on met la led à l\textquotesingle{}état souhaité 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em prise} & l\textquotesingle{}état souhaité de la led \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{prise_8c_af174bb9918661433bd60c26db2b0ffaf}\label{prise_8c_af174bb9918661433bd60c26db2b0ffaf}} 
+\index{prise.c@{prise.c}!prise\_verrouille\_trappe@{prise\_verrouille\_trappe}}
+\index{prise\_verrouille\_trappe@{prise\_verrouille\_trappe}!prise.c@{prise.c}}
+\doxysubsubsection{\texorpdfstring{prise\_verrouille\_trappe()}{prise\_verrouille\_trappe()}}
+{\footnotesize\ttfamily void prise\+\_\+verrouille\+\_\+trappe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction verouille la trappe. 
+
+Dans cette fonction on accède la mémoire partagée et on vérouille la trappe en mettant la led à OFF \begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\Hypertarget{prise_8c_a161377ab848ef62783003ff7f306e8b8}\label{prise_8c_a161377ab848ef62783003ff7f306e8b8}} 
+\index{prise.c@{prise.c}!io\_p@{io\_p}}
+\index{io\_p@{io\_p}!prise.c@{prise.c}}
+\doxysubsubsection{\texorpdfstring{io\_p}{io\_p}}
+{\footnotesize\ttfamily entrees$\ast$ io\+\_\+p}
+
+
+
+variable globale de \mbox{\hyperlink{prise_8c}{prise.\+c}} pour la gestion mémoire partagée 
+
+
+\begin{DoxyItemize}
+\item $\ast$io\+\_\+p\+: pointeur vers la structure des entrées de la mémoire partagée 
+\end{DoxyItemize}\mbox{\Hypertarget{prise_8c_aa2c72f3f882c84799e0cb433697038f0}\label{prise_8c_aa2c72f3f882c84799e0cb433697038f0}} 
+\index{prise.c@{prise.c}!shmid\_p@{shmid\_p}}
+\index{shmid\_p@{shmid\_p}!prise.c@{prise.c}}
+\doxysubsubsection{\texorpdfstring{shmid\_p}{shmid\_p}}
+{\footnotesize\ttfamily int shmid\+\_\+p}
+
+
+
+variable globale de \mbox{\hyperlink{prise_8c}{prise.\+c}} 
+
+
+\begin{DoxyItemize}
+\item $\ast$shmid\+\_\+p \+: entier qui servira d\textquotesingle{}entrée pour la mémoire partagée 
+\end{DoxyItemize}

@@ -1,0 +1,125 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {french}{}\relax 
+\contentsline {chapter}{\numberline {1}Projet-\/de-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Conception-\/de-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Gestion-\/de-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System-\/de-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Recharge-\/de-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Voiture-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Electrique}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Index des fichiers}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Liste des fichiers}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Documentation des fichiers}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Référence du fichier baseclient.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Description détaillée}{5}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Documentation des fonctions}{6}{subsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}baseclient\_ajoutclient()}{6}{subsubsection.3.1.2.1}%
+\contentsline {subsubsection}{\numberline {3.1.2.2}baseclient\_authentifier()}{6}{subsubsection.3.1.2.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.3}baseclient\_supprimeclient()}{7}{subsubsection.3.1.2.3}%
+\contentsline {section}{\numberline {3.2}Référence du fichier baseclient.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{7}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Description détaillée}{8}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Documentation des fonctions}{8}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}baseclient\_ajoutclient()}{8}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}baseclient\_authentifier()}{9}{subsubsection.3.2.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.3}baseclient\_supprimeclient()}{9}{subsubsection.3.2.2.3}%
+\contentsline {section}{\numberline {3.3}Référence du fichier borne.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{10}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Description détaillée}{11}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Documentation du type de l\textquotesingle {}énumération}{11}{subsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.1}etatsystem}{11}{subsubsection.3.3.2.1}%
+\contentsline {subsection}{\numberline {3.3.3}Documentation des fonctions}{11}{subsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.3.1}administration\_operateur()}{11}{subsubsection.3.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.3.2}main()}{12}{subsubsection.3.3.3.2}%
+\contentsline {section}{\numberline {3.4}Référence du fichier bouton.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{13}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Description détaillée}{13}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Documentation des fonctions}{14}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}bouton\_apppuie\_button\_stop()}{14}{subsubsection.3.4.2.1}%
+\contentsline {subsubsection}{\numberline {3.4.2.2}bouton\_appuie\_button\_charge()}{14}{subsubsection.3.4.2.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.3}bouton\_set\_bouton\_charge()}{14}{subsubsection.3.4.2.3}%
+\contentsline {subsubsection}{\numberline {3.4.2.4}bouton\_set\_bouton\_stop()}{15}{subsubsection.3.4.2.4}%
+\contentsline {subsection}{\numberline {3.4.3}Documentation des variables}{15}{subsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.3.1}io\_b}{15}{subsubsection.3.4.3.1}%
+\contentsline {subsubsection}{\numberline {3.4.3.2}shmid\_b}{15}{subsubsection.3.4.3.2}%
+\contentsline {section}{\numberline {3.5}Référence du fichier bouton.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{16}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Description détaillée}{16}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Documentation des fonctions}{17}{subsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.2.1}bouton\_apppuie\_button\_stop()}{17}{subsubsection.3.5.2.1}%
+\contentsline {subsubsection}{\numberline {3.5.2.2}bouton\_appuie\_button\_charge()}{17}{subsubsection.3.5.2.2}%
+\contentsline {subsubsection}{\numberline {3.5.2.3}bouton\_set\_bouton\_charge()}{17}{subsubsection.3.5.2.3}%
+\contentsline {subsubsection}{\numberline {3.5.2.4}bouton\_set\_bouton\_stop()}{18}{subsubsection.3.5.2.4}%
+\contentsline {section}{\numberline {3.6}Référence du fichier generateur\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}save.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{18}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Description détaillée}{19}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Documentation des fonctions}{19}{subsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.2.1}generateur\_save\_fermer\_contacteur()}{19}{subsubsection.3.6.2.1}%
+\contentsline {subsubsection}{\numberline {3.6.2.2}generateur\_save\_generer\_pwm()}{19}{subsubsection.3.6.2.2}%
+\contentsline {subsubsection}{\numberline {3.6.2.3}generateur\_save\_ouvrir\_contacteur()}{20}{subsubsection.3.6.2.3}%
+\contentsline {subsubsection}{\numberline {3.6.2.4}generateur\_save\_tension\_DC()}{20}{subsubsection.3.6.2.4}%
+\contentsline {subsection}{\numberline {3.6.3}Documentation des variables}{20}{subsection.3.6.3}%
+\contentsline {subsubsection}{\numberline {3.6.3.1}io\_g}{20}{subsubsection.3.6.3.1}%
+\contentsline {subsubsection}{\numberline {3.6.3.2}shmid\_g}{21}{subsubsection.3.6.3.2}%
+\contentsline {section}{\numberline {3.7}Référence du fichier generateur\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}save.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{21}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Description détaillée}{22}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Documentation des fonctions}{22}{subsection.3.7.2}%
+\contentsline {subsubsection}{\numberline {3.7.2.1}generateur\_save\_fermer\_contacteur()}{22}{subsubsection.3.7.2.1}%
+\contentsline {subsubsection}{\numberline {3.7.2.2}generateur\_save\_generer\_pwm()}{22}{subsubsection.3.7.2.2}%
+\contentsline {subsubsection}{\numberline {3.7.2.3}generateur\_save\_ouvrir\_contacteur()}{22}{subsubsection.3.7.2.3}%
+\contentsline {subsubsection}{\numberline {3.7.2.4}generateur\_save\_tension\_DC()}{22}{subsubsection.3.7.2.4}%
+\contentsline {section}{\numberline {3.8}Référence du fichier lecteurcarte.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{23}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Description détaillée}{23}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}Documentation des fonctions}{23}{subsection.3.8.2}%
+\contentsline {subsubsection}{\numberline {3.8.2.1}lecteurcarte\_initialiser()}{24}{subsubsection.3.8.2.1}%
+\contentsline {subsubsection}{\numberline {3.8.2.2}lecteurcarte\_lire\_carte()}{24}{subsubsection.3.8.2.2}%
+\contentsline {section}{\numberline {3.9}Référence du fichier lecteurcarte.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{24}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Description détaillée}{25}{subsection.3.9.1}%
+\contentsline {subsection}{\numberline {3.9.2}Documentation des fonctions}{25}{subsection.3.9.2}%
+\contentsline {subsubsection}{\numberline {3.9.2.1}lecteurcarte\_initialiser()}{26}{subsubsection.3.9.2.1}%
+\contentsline {subsubsection}{\numberline {3.9.2.2}lecteurcarte\_lire\_carte()}{26}{subsubsection.3.9.2.2}%
+\contentsline {section}{\numberline {3.10}Référence du fichier prise.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{26}{section.3.10}%
+\contentsline {subsection}{\numberline {3.10.1}Description détaillée}{27}{subsection.3.10.1}%
+\contentsline {subsection}{\numberline {3.10.2}Documentation des fonctions}{27}{subsection.3.10.2}%
+\contentsline {subsubsection}{\numberline {3.10.2.1}prise\_deverrouille\_trappe()}{27}{subsubsection.3.10.2.1}%
+\contentsline {subsubsection}{\numberline {3.10.2.2}prise\_set\_prise()}{28}{subsubsection.3.10.2.2}%
+\contentsline {subsubsection}{\numberline {3.10.2.3}prise\_verrouille\_trappe()}{28}{subsubsection.3.10.2.3}%
+\contentsline {subsection}{\numberline {3.10.3}Documentation des variables}{28}{subsection.3.10.3}%
+\contentsline {subsubsection}{\numberline {3.10.3.1}io\_p}{28}{subsubsection.3.10.3.1}%
+\contentsline {subsubsection}{\numberline {3.10.3.2}shmid\_p}{28}{subsubsection.3.10.3.2}%
+\contentsline {section}{\numberline {3.11}Référence du fichier prise.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{29}{section.3.11}%
+\contentsline {subsection}{\numberline {3.11.1}Description détaillée}{29}{subsection.3.11.1}%
+\contentsline {subsection}{\numberline {3.11.2}Documentation des fonctions}{30}{subsection.3.11.2}%
+\contentsline {subsubsection}{\numberline {3.11.2.1}prise\_deverrouille\_trappe()}{30}{subsubsection.3.11.2.1}%
+\contentsline {subsubsection}{\numberline {3.11.2.2}prise\_set\_prise()}{30}{subsubsection.3.11.2.2}%
+\contentsline {subsubsection}{\numberline {3.11.2.3}prise\_verrouille\_trappe()}{30}{subsubsection.3.11.2.3}%
+\contentsline {section}{\numberline {3.12}Référence du fichier README.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}md}{31}{section.3.12}%
+\contentsline {section}{\numberline {3.13}Référence du fichier timer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{31}{section.3.13}%
+\contentsline {subsection}{\numberline {3.13.1}Description détaillée}{31}{subsection.3.13.1}%
+\contentsline {subsection}{\numberline {3.13.2}Documentation des fonctions}{31}{subsection.3.13.2}%
+\contentsline {subsubsection}{\numberline {3.13.2.1}timer\_count\_sec()}{32}{subsubsection.3.13.2.1}%
+\contentsline {subsubsection}{\numberline {3.13.2.2}timer\_raz()}{32}{subsubsection.3.13.2.2}%
+\contentsline {subsubsection}{\numberline {3.13.2.3}timer\_valeur()}{32}{subsubsection.3.13.2.3}%
+\contentsline {subsection}{\numberline {3.13.3}Documentation des variables}{33}{subsection.3.13.3}%
+\contentsline {subsubsection}{\numberline {3.13.3.1}depart\_timer}{33}{subsubsection.3.13.3.1}%
+\contentsline {subsubsection}{\numberline {3.13.3.2}io\_t}{33}{subsubsection.3.13.3.2}%
+\contentsline {subsubsection}{\numberline {3.13.3.3}shmid\_t}{33}{subsubsection.3.13.3.3}%
+\contentsline {section}{\numberline {3.14}Référence du fichier timer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{34}{section.3.14}%
+\contentsline {subsection}{\numberline {3.14.1}Description détaillée}{34}{subsection.3.14.1}%
+\contentsline {subsection}{\numberline {3.14.2}Documentation des fonctions}{35}{subsection.3.14.2}%
+\contentsline {subsubsection}{\numberline {3.14.2.1}timer\_count\_sec()}{35}{subsubsection.3.14.2.1}%
+\contentsline {subsubsection}{\numberline {3.14.2.2}timer\_raz()}{35}{subsubsection.3.14.2.2}%
+\contentsline {subsubsection}{\numberline {3.14.2.3}timer\_valeur()}{35}{subsubsection.3.14.2.3}%
+\contentsline {section}{\numberline {3.15}Référence du fichier voyant.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{36}{section.3.15}%
+\contentsline {subsection}{\numberline {3.15.1}Description détaillée}{37}{subsection.3.15.1}%
+\contentsline {subsection}{\numberline {3.15.2}Documentation des fonctions}{37}{subsection.3.15.2}%
+\contentsline {subsubsection}{\numberline {3.15.2.1}voyant\_blink\_charge()}{37}{subsubsection.3.15.2.1}%
+\contentsline {subsubsection}{\numberline {3.15.2.2}voyant\_blink\_defaut()}{37}{subsubsection.3.15.2.2}%
+\contentsline {subsubsection}{\numberline {3.15.2.3}voyant\_set\_charge()}{37}{subsubsection.3.15.2.3}%
+\contentsline {subsubsection}{\numberline {3.15.2.4}voyant\_set\_defaut()}{38}{subsubsection.3.15.2.4}%
+\contentsline {subsubsection}{\numberline {3.15.2.5}voyant\_set\_dispo()}{38}{subsubsection.3.15.2.5}%
+\contentsline {subsubsection}{\numberline {3.15.2.6}voyant\_set\_prise()}{39}{subsubsection.3.15.2.6}%
+\contentsline {subsubsection}{\numberline {3.15.2.7}voyant\_set\_trappe()}{39}{subsubsection.3.15.2.7}%
+\contentsline {subsection}{\numberline {3.15.3}Documentation des variables}{39}{subsection.3.15.3}%
+\contentsline {subsubsection}{\numberline {3.15.3.1}io}{39}{subsubsection.3.15.3.1}%
+\contentsline {subsubsection}{\numberline {3.15.3.2}shmid}{40}{subsubsection.3.15.3.2}%
+\contentsline {section}{\numberline {3.16}Référence du fichier voyant.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{40}{section.3.16}%
+\contentsline {subsection}{\numberline {3.16.1}Description détaillée}{41}{subsection.3.16.1}%
+\contentsline {subsection}{\numberline {3.16.2}Documentation des fonctions}{41}{subsection.3.16.2}%
+\contentsline {subsubsection}{\numberline {3.16.2.1}voyant\_blink\_charge()}{41}{subsubsection.3.16.2.1}%
+\contentsline {subsubsection}{\numberline {3.16.2.2}voyant\_blink\_defaut()}{41}{subsubsection.3.16.2.2}%
+\contentsline {subsubsection}{\numberline {3.16.2.3}voyant\_set\_charge()}{41}{subsubsection.3.16.2.3}%
+\contentsline {subsubsection}{\numberline {3.16.2.4}voyant\_set\_defaut()}{42}{subsubsection.3.16.2.4}%
+\contentsline {subsubsection}{\numberline {3.16.2.5}voyant\_set\_dispo()}{42}{subsubsection.3.16.2.5}%
+\contentsline {subsubsection}{\numberline {3.16.2.6}voyant\_set\_prise()}{43}{subsubsection.3.16.2.6}%
+\contentsline {subsubsection}{\numberline {3.16.2.7}voyant\_set\_trappe()}{43}{subsubsection.3.16.2.7}%
+\contentsline {chapter}{Index}{45}{section*.44}%

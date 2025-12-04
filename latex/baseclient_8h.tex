@@ -1,0 +1,113 @@
+\hypertarget{baseclient_8h}{}\doxysection{Référence du fichier baseclient.\+h}
+\label{baseclient_8h}\index{baseclient.h@{baseclient.h}}
+
+
+Dans ce fichier on déclare les fonctions pour la gestion des clients.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Graphe des dépendances par inclusion de baseclient.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{baseclient_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{baseclient_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{baseclient_8h_a2068cf19d10301d8672bbe2273131253}{baseclient\+\_\+authentifier}} (int)
+\begin{DoxyCompactList}\small\item\em Authentifier le client qui se presente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{baseclient_8h_a55f9bd63769ac952b997696b9640afae}{baseclient\+\_\+ajoutclient}} (int)
+\begin{DoxyCompactList}\small\item\em Ajout un client dans la base de donnée. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{baseclient_8h_a31439e9e3b761545805c1f04b98a75a3}{baseclient\+\_\+supprimeclient}} (int)
+\begin{DoxyCompactList}\small\item\em Supprime un client de la base de donnée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Dans ce fichier on déclare les fonctions pour la gestion des clients. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{baseclient_8h_a55f9bd63769ac952b997696b9640afae}\label{baseclient_8h_a55f9bd63769ac952b997696b9640afae}} 
+\index{baseclient.h@{baseclient.h}!baseclient\_ajoutclient@{baseclient\_ajoutclient}}
+\index{baseclient\_ajoutclient@{baseclient\_ajoutclient}!baseclient.h@{baseclient.h}}
+\doxysubsubsection{\texorpdfstring{baseclient\_ajoutclient()}{baseclient\_ajoutclient()}}
+{\footnotesize\ttfamily void baseclient\+\_\+ajoutclient (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})}
+
+
+
+Ajout un client dans la base de donnée. 
+
+Dans cette fonction on ouvre la base de données, on vérifie si le numéro client à ajouter n\textquotesingle{}est pas dans la base de donnée et après on l\textquotesingle{}ajoute. si le client est présent, on signal à l\textquotesingle{}opérateur que ce numéro est déjà présent dans la base de donnée. 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em k} & c\textquotesingle{}est l\textquotesingle{}id du client à ajouter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{variables internes utilisées}
+\begin{DoxyItemize}
+\item fich \+: pointeur de type FILE vers le fichier de la base de donnée \end{DoxyItemize}
+
+\end{DoxyParagraph}
+\mbox{\Hypertarget{baseclient_8h_a2068cf19d10301d8672bbe2273131253}\label{baseclient_8h_a2068cf19d10301d8672bbe2273131253}} 
+\index{baseclient.h@{baseclient.h}!baseclient\_authentifier@{baseclient\_authentifier}}
+\index{baseclient\_authentifier@{baseclient\_authentifier}!baseclient.h@{baseclient.h}}
+\doxysubsubsection{\texorpdfstring{baseclient\_authentifier()}{baseclient\_authentifier()}}
+{\footnotesize\ttfamily int baseclient\+\_\+authentifier (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})}
+
+
+
+Authentifier le client qui se presente. 
+
+Dans cette fonction on ouvre la base de données database.\+txt on vérifie si le numéro entrer par le client est présent dans la base de donnée. 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em num} & c\textquotesingle{}est l\textquotesingle{}id du client à faire valider \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Valeurs retournées}
+{\em 1} & si le client est dans la base de données \\
+\hline
+{\em 0} & si le client ne figure pas dans la base de donné \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{baseclient_8h_a31439e9e3b761545805c1f04b98a75a3}\label{baseclient_8h_a31439e9e3b761545805c1f04b98a75a3}} 
+\index{baseclient.h@{baseclient.h}!baseclient\_supprimeclient@{baseclient\_supprimeclient}}
+\index{baseclient\_supprimeclient@{baseclient\_supprimeclient}!baseclient.h@{baseclient.h}}
+\doxysubsubsection{\texorpdfstring{baseclient\_supprimeclient()}{baseclient\_supprimeclient()}}
+{\footnotesize\ttfamily void baseclient\+\_\+supprimeclient (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})}
+
+
+
+Supprime un client de la base de donnée. 
+
+Dans cette fonction on créer un fichier temporaire et à la fin on supprime l\textquotesingle{}ancienne base de donnée et on renome le fichier temporaire en notre fichier base de donnée. Ce fichier temporaire nous permet de transférer les numeros de clients qui sont différent du numéro à supprimer. Si le client à supprimer ne figure pas dans la base de donnée on le notifie à l\textquotesingle{}opérateur Si la suppression a reussit, on le signale à l\textquotesingle{}opérateur 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em k} & c\textquotesingle{}est l\textquotesingle{}id du client à supprimer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{variables internes utilisées}
+\begin{DoxyItemize}
+\item fich \+: pointeur de type FILE vers le fichier de la base de donnée \item tmp\+\_\+data \+: pointeur de type FILE vers le fichier temporaire \item val \+: variable qui permet de lire les numéros dans la base de donnée \item found \+: variable qui permet de savoir si le client à supprimer est dans la base de donnée ou pas ~\newline
+ \end{DoxyItemize}
+
+\end{DoxyParagraph}

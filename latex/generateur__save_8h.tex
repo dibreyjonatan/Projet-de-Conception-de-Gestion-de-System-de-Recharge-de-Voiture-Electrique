@@ -1,0 +1,108 @@
+\hypertarget{generateur__save_8h}{}\doxysection{Référence du fichier generateur\+\_\+save.\+h}
+\label{generateur__save_8h}\index{generateur\_save.h@{generateur\_save.h}}
+
+
+Dans ce fichier on déclare les fonctions pour la gestion du générateur save.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$donnees\+\_\+borne.\+h$>$}\newline
+{\ttfamily \#include $<$memoire\+\_\+borne.\+h$>$}\newline
+Graphe des dépendances par inclusion de generateur\+\_\+save.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{generateur__save_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{generateur__save_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{generateur__save_8h_adc9cab6226f447f2fcd65ef5a45a73e3}{generateur\+\_\+save\+\_\+fermer\+\_\+contacteur}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction ferme le contacteur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{generateur__save_8h_a3124e3d2819118e587a7c11ea325e144}{generateur\+\_\+save\+\_\+ouvrir\+\_\+contacteur}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction ouvre le contacteur. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{generateur__save_8h_a0b008ebc31035ee2114b4739a23bd84e}{generateur\+\_\+save\+\_\+tension\+\_\+\+DC}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction consulte la valeur de la tension DC et la renvoie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{generateur__save_8h_a694d3367f8f0ee4f891eac1a1694149b}{generateur\+\_\+save\+\_\+generer\+\_\+pwm}} (pwm signal)
+\begin{DoxyCompactList}\small\item\em Cette fonction génère le signal PWM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Dans ce fichier on déclare les fonctions pour la gestion du générateur save. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{generateur__save_8h_adc9cab6226f447f2fcd65ef5a45a73e3}\label{generateur__save_8h_adc9cab6226f447f2fcd65ef5a45a73e3}} 
+\index{generateur\_save.h@{generateur\_save.h}!generateur\_save\_fermer\_contacteur@{generateur\_save\_fermer\_contacteur}}
+\index{generateur\_save\_fermer\_contacteur@{generateur\_save\_fermer\_contacteur}!generateur\_save.h@{generateur\_save.h}}
+\doxysubsubsection{\texorpdfstring{generateur\_save\_fermer\_contacteur()}{generateur\_save\_fermer\_contacteur()}}
+{\footnotesize\ttfamily void generateur\+\_\+save\+\_\+fermer\+\_\+contacteur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction ferme le contacteur. 
+
+accède la mémoire partagée partagé shmid et on ferme le contacteur en mettant la valeur à 1 \begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{generateur__save_8h_a694d3367f8f0ee4f891eac1a1694149b}\label{generateur__save_8h_a694d3367f8f0ee4f891eac1a1694149b}} 
+\index{generateur\_save.h@{generateur\_save.h}!generateur\_save\_generer\_pwm@{generateur\_save\_generer\_pwm}}
+\index{generateur\_save\_generer\_pwm@{generateur\_save\_generer\_pwm}!generateur\_save.h@{generateur\_save.h}}
+\doxysubsubsection{\texorpdfstring{generateur\_save\_generer\_pwm()}{generateur\_save\_generer\_pwm()}}
+{\footnotesize\ttfamily void generateur\+\_\+save\+\_\+generer\+\_\+pwm (\begin{DoxyParamCaption}\item[{pwm}]{signal }\end{DoxyParamCaption})}
+
+
+
+Cette fonction génère le signal PWM. 
+
+accède la mémoire partagée partagé shmid et ensuite on écrit dans cette mémoire. \begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{generateur__save_8h_a3124e3d2819118e587a7c11ea325e144}\label{generateur__save_8h_a3124e3d2819118e587a7c11ea325e144}} 
+\index{generateur\_save.h@{generateur\_save.h}!generateur\_save\_ouvrir\_contacteur@{generateur\_save\_ouvrir\_contacteur}}
+\index{generateur\_save\_ouvrir\_contacteur@{generateur\_save\_ouvrir\_contacteur}!generateur\_save.h@{generateur\_save.h}}
+\doxysubsubsection{\texorpdfstring{generateur\_save\_ouvrir\_contacteur()}{generateur\_save\_ouvrir\_contacteur()}}
+{\footnotesize\ttfamily void generateur\+\_\+save\+\_\+ouvrir\+\_\+contacteur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction ouvre le contacteur. 
+
+accède la mémoire partagée partagé shmid et ensuite on écrit dans cette mémoire pour ouvrir le contacteur en mettant la valeur à 0 \begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{generateur__save_8h_a0b008ebc31035ee2114b4739a23bd84e}\label{generateur__save_8h_a0b008ebc31035ee2114b4739a23bd84e}} 
+\index{generateur\_save.h@{generateur\_save.h}!generateur\_save\_tension\_DC@{generateur\_save\_tension\_DC}}
+\index{generateur\_save\_tension\_DC@{generateur\_save\_tension\_DC}!generateur\_save.h@{generateur\_save.h}}
+\doxysubsubsection{\texorpdfstring{generateur\_save\_tension\_DC()}{generateur\_save\_tension\_DC()}}
+{\footnotesize\ttfamily int generateur\+\_\+save\+\_\+tension\+\_\+\+DC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction consulte la valeur de la tension DC et la renvoie. 
+
+accède la mémoire partagée partagé shmid et ensuite on lit dans cette mémoire et on retourne la valeur lu. les valeurs de tension possible générer par le générateur save est 12,9,6,0. \begin{DoxyReturn}{Renvoie}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Valeurs retournées}
+{\em 12} & \\
+\hline
+{\em 9} & \\
+\hline
+{\em 6} & \\
+\hline
+{\em 0} & \\
+\hline
+\end{DoxyRetVals}

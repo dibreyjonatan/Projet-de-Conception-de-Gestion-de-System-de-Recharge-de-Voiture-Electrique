@@ -1,0 +1,168 @@
+\hypertarget{voyant_8h}{}\doxysection{Référence du fichier voyant.\+h}
+\label{voyant_8h}\index{voyant.h@{voyant.h}}
+
+
+Dans ce fichier on déclare les fonctions pour la gestion des voyants.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$donnees\+\_\+borne.\+h$>$}\newline
+{\ttfamily \#include $<$memoire\+\_\+borne.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Graphe des dépendances par inclusion de voyant.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{voyant_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{voyant_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{voyant_8h_a77996dc68d3fdf26dfedbe7c279bd360}{voyant\+\_\+set\+\_\+dispo}} (led dispo)
+\begin{DoxyCompactList}\small\item\em Cette fonction met la led de disponibilité à VERT ou ROUGE ou l\textquotesingle{}éteint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{voyant_8h_aa2c2af293f9b0f973907d9760110c2f0}{voyant\+\_\+set\+\_\+charge}} (led charge)
+\begin{DoxyCompactList}\small\item\em Cette fonction met la led de charge à VERT ou ROUGE ou l\textquotesingle{}éteint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{voyant_8h_a594f03be3c398eff7ae43bc7cabff56b}{voyant\+\_\+blink\+\_\+charge}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction fait clignoter la led de charge. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{voyant_8h_aefdb6583e94c791b70589ddd54a8d8bb}{voyant\+\_\+set\+\_\+defaut}} (led defaut)
+\begin{DoxyCompactList}\small\item\em Cette fonction met la led de défaut à VERT ou ROUGE ou l\textquotesingle{}éteint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{voyant_8h_ad113a074595f87deb7e90030e6278463}{voyant\+\_\+blink\+\_\+defaut}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction fait clignoter la led de défaut. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{voyant_8h_a141a8b138edfb0f2d47d3aa004c61f5e}{voyant\+\_\+set\+\_\+prise}} (led prise)
+\begin{DoxyCompactList}\small\item\em Cette fonction met la led de prise à VERT ou ROUGE ou l\textquotesingle{}éteint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{voyant_8h_a825d98d6893b154cb3e3ce7e47b0ac23}{voyant\+\_\+set\+\_\+trappe}} (led trappe)
+\begin{DoxyCompactList}\small\item\em Cette fonction met la led de trappe à VERT ou ROUGE ou l\textquotesingle{}éteint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Dans ce fichier on déclare les fonctions pour la gestion des voyants. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{voyant_8h_a594f03be3c398eff7ae43bc7cabff56b}\label{voyant_8h_a594f03be3c398eff7ae43bc7cabff56b}} 
+\index{voyant.h@{voyant.h}!voyant\_blink\_charge@{voyant\_blink\_charge}}
+\index{voyant\_blink\_charge@{voyant\_blink\_charge}!voyant.h@{voyant.h}}
+\doxysubsubsection{\texorpdfstring{voyant\_blink\_charge()}{voyant\_blink\_charge()}}
+{\footnotesize\ttfamily void voyant\+\_\+blink\+\_\+charge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction fait clignoter la led de charge. 
+
+Dans cette fonction on fait clignoter la led de charge en VERT 4 fois avec un intervalle d\textquotesingle{}une seconde Ce qui donne 8 secondes de clignotement. 1 seconde allumée et 1 seconde éteinte. \begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{voyant_8h_ad113a074595f87deb7e90030e6278463}\label{voyant_8h_ad113a074595f87deb7e90030e6278463}} 
+\index{voyant.h@{voyant.h}!voyant\_blink\_defaut@{voyant\_blink\_defaut}}
+\index{voyant\_blink\_defaut@{voyant\_blink\_defaut}!voyant.h@{voyant.h}}
+\doxysubsubsection{\texorpdfstring{voyant\_blink\_defaut()}{voyant\_blink\_defaut()}}
+{\footnotesize\ttfamily void voyant\+\_\+blink\+\_\+defaut (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction fait clignoter la led de défaut. 
+
+Dans cette fonction on fait clignoter la led de défaut en ROUGE 4 fois avec un intervalle d\textquotesingle{}une seconde Ce qui donne 8 secondes de clignotement. 1 seconde allumée et 1 seconde éteinte. $\ast$\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{voyant_8h_aa2c2af293f9b0f973907d9760110c2f0}\label{voyant_8h_aa2c2af293f9b0f973907d9760110c2f0}} 
+\index{voyant.h@{voyant.h}!voyant\_set\_charge@{voyant\_set\_charge}}
+\index{voyant\_set\_charge@{voyant\_set\_charge}!voyant.h@{voyant.h}}
+\doxysubsubsection{\texorpdfstring{voyant\_set\_charge()}{voyant\_set\_charge()}}
+{\footnotesize\ttfamily void voyant\+\_\+set\+\_\+charge (\begin{DoxyParamCaption}\item[{led}]{charge }\end{DoxyParamCaption})}
+
+
+
+Cette fonction met la led de charge à VERT ou ROUGE ou l\textquotesingle{}éteint. 
+
+Dans cette fonction on accède la mémoire partagée et on met la led à l\textquotesingle{}état souhaité 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em charge} & l\textquotesingle{}état souhaité de la led \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{voyant_8h_aefdb6583e94c791b70589ddd54a8d8bb}\label{voyant_8h_aefdb6583e94c791b70589ddd54a8d8bb}} 
+\index{voyant.h@{voyant.h}!voyant\_set\_defaut@{voyant\_set\_defaut}}
+\index{voyant\_set\_defaut@{voyant\_set\_defaut}!voyant.h@{voyant.h}}
+\doxysubsubsection{\texorpdfstring{voyant\_set\_defaut()}{voyant\_set\_defaut()}}
+{\footnotesize\ttfamily void voyant\+\_\+set\+\_\+defaut (\begin{DoxyParamCaption}\item[{led}]{defaut }\end{DoxyParamCaption})}
+
+
+
+Cette fonction met la led de défaut à VERT ou ROUGE ou l\textquotesingle{}éteint. 
+
+Dans cette fonction on accède la mémoire partagée et on met la led à l\textquotesingle{}état souhaité 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em defaut} & l\textquotesingle{}état souhaité de la led \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{voyant_8h_a77996dc68d3fdf26dfedbe7c279bd360}\label{voyant_8h_a77996dc68d3fdf26dfedbe7c279bd360}} 
+\index{voyant.h@{voyant.h}!voyant\_set\_dispo@{voyant\_set\_dispo}}
+\index{voyant\_set\_dispo@{voyant\_set\_dispo}!voyant.h@{voyant.h}}
+\doxysubsubsection{\texorpdfstring{voyant\_set\_dispo()}{voyant\_set\_dispo()}}
+{\footnotesize\ttfamily void voyant\+\_\+set\+\_\+dispo (\begin{DoxyParamCaption}\item[{led}]{dispo }\end{DoxyParamCaption})}
+
+
+
+Cette fonction met la led de disponibilité à VERT ou ROUGE ou l\textquotesingle{}éteint. 
+
+Dans cette fonction on accède la mémoire partagée et on met la led à l\textquotesingle{}état souhaité 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em dispo} & l\textquotesingle{}état souhaité de la led \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{voyant_8h_a141a8b138edfb0f2d47d3aa004c61f5e}\label{voyant_8h_a141a8b138edfb0f2d47d3aa004c61f5e}} 
+\index{voyant.h@{voyant.h}!voyant\_set\_prise@{voyant\_set\_prise}}
+\index{voyant\_set\_prise@{voyant\_set\_prise}!voyant.h@{voyant.h}}
+\doxysubsubsection{\texorpdfstring{voyant\_set\_prise()}{voyant\_set\_prise()}}
+{\footnotesize\ttfamily void voyant\+\_\+set\+\_\+prise (\begin{DoxyParamCaption}\item[{led}]{prise }\end{DoxyParamCaption})}
+
+
+
+Cette fonction met la led de prise à VERT ou ROUGE ou l\textquotesingle{}éteint. 
+
+Dans cette fonction on accède la mémoire partagée et on met la led à l\textquotesingle{}état souhaité 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em prise} & l\textquotesingle{}état souhaité de la led \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{voyant_8h_a825d98d6893b154cb3e3ce7e47b0ac23}\label{voyant_8h_a825d98d6893b154cb3e3ce7e47b0ac23}} 
+\index{voyant.h@{voyant.h}!voyant\_set\_trappe@{voyant\_set\_trappe}}
+\index{voyant\_set\_trappe@{voyant\_set\_trappe}!voyant.h@{voyant.h}}
+\doxysubsubsection{\texorpdfstring{voyant\_set\_trappe()}{voyant\_set\_trappe()}}
+{\footnotesize\ttfamily void voyant\+\_\+set\+\_\+trappe (\begin{DoxyParamCaption}\item[{led}]{trappe }\end{DoxyParamCaption})}
+
+
+
+Cette fonction met la led de trappe à VERT ou ROUGE ou l\textquotesingle{}éteint. 
+
+Dans cette fonction on accède la mémoire partagée et on met la led à l\textquotesingle{}état souhaité 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em trappe} & l\textquotesingle{}état souhaité de la led \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}

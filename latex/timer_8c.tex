@@ -1,0 +1,152 @@
+\hypertarget{timer_8c}{}\doxysection{Référence du fichier timer.\+c}
+\label{timer_8c}\index{timer.c@{timer.c}}
+
+
+Dans ce fichier on fait la gestion du timer.  
+
+
+{\ttfamily \#include \char`\"{}timer.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de timer.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{timer_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{timer_8c_a43eff729e8884be736e43dc6bcc251bd}{timer\+\_\+raz}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction remet le timer à zéro ~\newline
+ \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{timer_8c_a47beb599990ddd112d9d6a1d82dc6f76}{timer\+\_\+valeur}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction calcule la différence de temps depuis le dernier appel ~\newline
+ \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{timer_8c_af113a4664ba0325ba1201696a0c06dee}{timer\+\_\+count\+\_\+sec}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction met à jour le timer chaque seconde. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+entrees $\ast$ \mbox{\hyperlink{timer_8c_a42d0f0c5cd4275df57fc1690248d442a}{io\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em variable globale de \mbox{\hyperlink{timer_8c}{timer.\+c}} \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{timer_8c_a0f3419c7d0af141eb920b529d4731a3c}{shmid\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em variable globale de \mbox{\hyperlink{timer_8c}{timer.\+c}} \end{DoxyCompactList}\item 
+time\+\_\+t \mbox{\hyperlink{timer_8c_accafb19806244bd2d28b90d4e8c04c48}{depart\+\_\+timer}}
+\begin{DoxyCompactList}\small\item\em variable globale de \mbox{\hyperlink{timer_8c}{timer.\+c}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Dans ce fichier on fait la gestion du timer. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{timer_8c_af113a4664ba0325ba1201696a0c06dee}\label{timer_8c_af113a4664ba0325ba1201696a0c06dee}} 
+\index{timer.c@{timer.c}!timer\_count\_sec@{timer\_count\_sec}}
+\index{timer\_count\_sec@{timer\_count\_sec}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{timer\_count\_sec()}{timer\_count\_sec()}}
+{\footnotesize\ttfamily int timer\+\_\+count\+\_\+sec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction met à jour le timer chaque seconde. 
+
+Dans cette fonction on accède la mémoire partagée et on met à jour le timer La valeur du timer est incrémentée chaque seconde La fonction \mbox{\hyperlink{timer_8c_a47beb599990ddd112d9d6a1d82dc6f76}{timer\+\_\+valeur()}} est appelée pour obtenir la seconde écoulée depuis le dernier appel. \begin{DoxyParagraph}{Variable interne utilisée \+:}
+
+\begin{DoxyItemize}
+\item timer\+\_\+value \+: variable de type int pour stocker la valeur du timer en secondes 
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Renvoie}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Valeurs retournées}
+{\em int} & le nombre de secondes écoulées \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{timer_8c_a43eff729e8884be736e43dc6bcc251bd}\label{timer_8c_a43eff729e8884be736e43dc6bcc251bd}} 
+\index{timer.c@{timer.c}!timer\_raz@{timer\_raz}}
+\index{timer\_raz@{timer\_raz}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{timer\_raz()}{timer\_raz()}}
+{\footnotesize\ttfamily void timer\+\_\+raz (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction remet le timer à zéro ~\newline
+ 
+
+Dans cette fonction on accède la mémoire partagée et on remet le timer à zéro La variable depart\+\_\+timer est initialisée avec le temps actuel \begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{timer_8c_a47beb599990ddd112d9d6a1d82dc6f76}\label{timer_8c_a47beb599990ddd112d9d6a1d82dc6f76}} 
+\index{timer.c@{timer.c}!timer\_valeur@{timer\_valeur}}
+\index{timer\_valeur@{timer\_valeur}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{timer\_valeur()}{timer\_valeur()}}
+{\footnotesize\ttfamily int timer\+\_\+valeur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction calcule la différence de temps depuis le dernier appel ~\newline
+ 
+
+Dans cette fonction on dort pendant 1 seconde puis on calcule la différence entre le temps actuel et le temps de départ La variable depart\+\_\+timer est mise à jour avec le temps actuel pour le prochain appel. \begin{DoxyParagraph}{Variable interne utilisée \+:}
+
+\begin{DoxyItemize}
+\item now \+: variable de type time\+\_\+t pour stocker le temps actuel
+\item diff \+: variable de type int pour stocker la différence de temps en secondes 
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Renvoie}
+int ~\newline
+ 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Valeurs retournées}
+{\em int} & la différence de temps en secondes \\
+\hline
+\end{DoxyRetVals}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\Hypertarget{timer_8c_accafb19806244bd2d28b90d4e8c04c48}\label{timer_8c_accafb19806244bd2d28b90d4e8c04c48}} 
+\index{timer.c@{timer.c}!depart\_timer@{depart\_timer}}
+\index{depart\_timer@{depart\_timer}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{depart\_timer}{depart\_timer}}
+{\footnotesize\ttfamily time\+\_\+t depart\+\_\+timer}
+
+
+
+variable globale de \mbox{\hyperlink{timer_8c}{timer.\+c}} 
+
+
+\begin{DoxyItemize}
+\item depart\+\_\+timer \+: variable de type time\+\_\+t pour stocker le temps de départ du timer 
+\end{DoxyItemize}\mbox{\Hypertarget{timer_8c_a42d0f0c5cd4275df57fc1690248d442a}\label{timer_8c_a42d0f0c5cd4275df57fc1690248d442a}} 
+\index{timer.c@{timer.c}!io\_t@{io\_t}}
+\index{io\_t@{io\_t}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{io\_t}{io\_t}}
+{\footnotesize\ttfamily entrees$\ast$ io\+\_\+t}
+
+
+
+variable globale de \mbox{\hyperlink{timer_8c}{timer.\+c}} 
+
+
+\begin{DoxyItemize}
+\item $\ast$io\+\_\+t\+: pointeur vers la structure des entrées de la mémoire partagée 
+\end{DoxyItemize}\mbox{\Hypertarget{timer_8c_a0f3419c7d0af141eb920b529d4731a3c}\label{timer_8c_a0f3419c7d0af141eb920b529d4731a3c}} 
+\index{timer.c@{timer.c}!shmid\_t@{shmid\_t}}
+\index{shmid\_t@{shmid\_t}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{shmid\_t}{shmid\_t}}
+{\footnotesize\ttfamily int shmid\+\_\+t}
+
+
+
+variable globale de \mbox{\hyperlink{timer_8c}{timer.\+c}} 
+
+
+\begin{DoxyItemize}
+\item $\ast$shmid\+\_\+t \+: entier qui servira d\textquotesingle{}entrée pour la mémoire partagée 
+\end{DoxyItemize}

@@ -74,15 +74,15 @@ int main()
       etat_present=etat_suivant=etat0 ;
       int id=0,data ; //pour la reprise vehicule //id pour le nombre de fois qu'il va interroger le client  // data pour la lecture 
      bouton_set_bouton_stop();
+     lecteurcarte_initialiser_lecteur(); // initialisation du port de lecture 
     while (1)
     { 
       switch(etat_present){
       case etat0 :
         lecteurcarte_initialiser();
         int numero=lecteurcarte_lire_carte();
-        printf("numero lu est : %d\n",numero); 
-
-        if(numero==255){
+        //printf("numero lu est : %d\n",numero); 
+        if(numero==3456){  // pour la gestion avec les cartes, le N° 3456 est l'administrateur 
          
          etat_suivant=etat255 ;
          break ; 
@@ -93,6 +93,7 @@ int main()
         // echec d'authentification
         if(found==0) {
         // clignoter voyant defaut 8s en cas d'erreur
+          printf(" Client inconnue \n"); 
           voyant_blink_defaut(); 
          break ;
           }
@@ -183,12 +184,14 @@ int main()
              break ;
              //fin de la recharge et reprise du véhicule selon le usecase 1
        case etat4 : 
-             printf(" fin de la recharge \n") ; 
-                if(id==0){
+            
+            if(id==0){
 
+            printf("fin de la recharge\n") ; 
             printf("veuillez vous authentifier à nouveau pour récupérer votre véhicule \n");
-            scanf("%d",&data);
+            data=lecteurcarte_lire_carte();
             if(numero!= data) {
+            printf(" Veuillez inserer la bonne carte s'il vous plait\n");  
             etat_suivant=etat4;   
               break ; 
             }
@@ -215,8 +218,9 @@ int main()
             if(id==0){
 
             printf("veuillez vous authentifier à nouveau pour récupérer votre véhicule \n");
-            scanf("%d",&data);
+            data=lecteurcarte_lire_carte();
             if(numero!= data) {
+            printf(" Veuillez inserer la bonne carte s'il vous plait\n"); 
             etat_suivant=etat5;   
               break ;
             }
@@ -259,21 +263,27 @@ int main()
 
 void administration_operateur(){
 
-  int c ;
+  int c ; int num ; 
   printf("Bienvenue Operateur : \n");
   printf(" Tapez 1, si vous voulez ajouter un nouveau client \n");
   printf("Tapez 2, si vous voulez supprimer un client \n");
   printf("Entrez votre choix : ");
   scanf("%d",&c);
+  
+  switch (c){
 
-  if(c==1){
-    printf("\n Veuillez entrer le numero du client à ajouter\n");
-    scanf("%d",&c);
-    baseclient_ajoutclient(c);
-  }
-  if(c==2){
-    printf("\n Veuillez entrer le numero du client à supprimer\n");
-    scanf("%d",&c);
+    case 1 : 
+     printf("\n Veuillez inserer la carte à enregistrer \n");
+     num=lecteurcarte_lire_carte();
+    
+     baseclient_ajoutclient(num);
+    break ;
+    case 2 : 
+    printf("\n Veuillez saisir le numero du client à supprimer\n");
+    scanf("%d",&num);
     baseclient_supprimeclient(c);
+     break ;
+    default : break ; 
   }
+ 
 }

@@ -281,7 +281,7 @@ void administration_operateur(){
     case 2 : 
     printf("\n Veuillez saisir le numero du client à supprimer\n");
     scanf("%d",&num);
-    baseclient_supprimeclient(c);
+    baseclient_supprimeclient(num);
      break ;
     default : break ; 
   }

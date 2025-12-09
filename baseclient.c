@@ -48,7 +48,7 @@ int baseclient_authentifier(int num){
 *@li fich : pointeur de type FILE vers le fichier de la base de donnée
 */
 void baseclient_ajoutclient(int k){
-   if(k!=255){
+   if(k!=3456){
   if(baseclient_authentifier(k)) printf("\nLe client que vous essayez d'ajouter figure déjà dans la liste\n");
   
   else{
@@ -56,6 +56,8 @@ FILE* fich=fopen("database.txt","a");
 if(fich==NULL) printf("erreur d'ouverture du fichier\n");
 else{
   fprintf(fich,"%d\n",k);
+    printf("Client ajouter avec succès\n");
+   
   fclose(fich);
 }
 }
@@ -96,10 +98,11 @@ void baseclient_supprimeclient(int k){
       fprintf(tmp_data,"%d\n",val);
     }
   }
+  if(found==1)
   printf("Suppression avec succès\n");
+
   fclose(fich);
   fclose(tmp_data);
-  
   remove("database.txt");
   rename("temp.txt","database.txt");
   

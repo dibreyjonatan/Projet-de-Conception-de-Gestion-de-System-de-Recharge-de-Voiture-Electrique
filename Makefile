@@ -17,10 +17,10 @@ CFLAGS = -Wall -O -g
 
 #Version materielle
 INCLDIRS = -I .
-LIBDIRS = 
+LIBDIRS = -L /shared/TCii/lib
 
 #dependance librairie libsmartcard_borne (voir git)
-LIBS64 = -lsmartcard_borne_x64
+LIBS64 = -lsmartcard_borne_x64 -lpcsclite
 
 SRCS = $(wildcard *.c)
 

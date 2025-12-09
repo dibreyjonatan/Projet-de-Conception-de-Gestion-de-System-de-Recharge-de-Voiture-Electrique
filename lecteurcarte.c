@@ -5,6 +5,17 @@
 #include <unistd.h>
 #include "lecteurcarte.h"
 
+/** 
+*@brief Cette fonction permet d'initialiser le port sur le lecteur 
+*@details
+* Cette fonction est déjà écrite par le prof elle est juste implementer 
+*@return void 
+*/
+void lecteurcarte_initialiser_lecteur()
+{
+         initialisations_ports();
+}
+
 /**
 
 *@brief Cette fonction initialise le lecteur de carte
@@ -15,7 +26,7 @@
 */
 void lecteurcarte_initialiser()
 {
- printf("veuillez inserer un numero de carte: \n") ; 
+ printf("veuillez inserer votre de carte: \n") ; 
 }
 
 /**
@@ -31,7 +42,12 @@ void lecteurcarte_initialiser()
 */
 int lecteurcarte_lire_carte()
 { int num ;
- scanf("%d",&num) ;
-  return num ; 
+ 
+   attente_insertion_carte();
+   num = lecture_numero_carte();
+   printf("Numéro lu:%d\n", num);
+   attente_retrait_carte();
+
+   return num ; 
 }
 

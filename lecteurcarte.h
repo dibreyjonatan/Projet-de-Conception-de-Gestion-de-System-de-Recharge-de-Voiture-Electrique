@@ -5,7 +5,10 @@
 #ifndef LECTEURCARTE_H
 #define LECTEURCARTE_H
 #include <stdio.h>
+#include <lcarte.h>
 
+
+void lecteurcarte_initialiser_lecteur();
 void lecteurcarte_initialiser();
 int lecteurcarte_lire_carte();
 

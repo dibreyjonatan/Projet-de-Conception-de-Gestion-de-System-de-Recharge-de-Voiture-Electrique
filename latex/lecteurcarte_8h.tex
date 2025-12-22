@@ -6,12 +6,13 @@ Dans ce fichier on déclare les fonctions pour la gestion du lecteur de carte.
 
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$lcarte.\+h$>$}\newline
 Graphe des dépendances par inclusion de lecteurcarte.\+h\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=164pt]{lecteurcarte_8h__incl}
+\includegraphics[width=202pt]{lecteurcarte_8h__incl}
 \end{center}
 \end{figure}
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
@@ -25,6 +26,8 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{lecteurcarte_8h_a8f01d41739423b12138f6d65a125d3d3}{lecteurcarte\+\_\+initialiser\+\_\+lecteur}} ()
+\begin{DoxyCompactList}\small\item\em Cette fonction permet d\textquotesingle{}initialiser le port sur le lecteur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{lecteurcarte_8h_a9da81b6eb527652d4eb6f8bb66f771f3}{lecteurcarte\+\_\+initialiser}} ()
 \begin{DoxyCompactList}\small\item\em Cette fonction initialise le lecteur de carte. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{lecteurcarte_8h_a8c26ccbf49b09f1ee42250d71a7a0daa}{lecteurcarte\+\_\+lire\+\_\+carte}} ()
@@ -48,6 +51,19 @@ Dans ce fichier on déclare les fonctions pour la gestion du lecteur de carte.
 Cette fonction initialise le lecteur de carte. 
 
 Cette fonction affiche un message demandant a l\textquotesingle{}utilisateur d\textquotesingle{}insérer une carte \begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lecteurcarte_8h_a8f01d41739423b12138f6d65a125d3d3}\label{lecteurcarte_8h_a8f01d41739423b12138f6d65a125d3d3}} 
+\index{lecteurcarte.h@{lecteurcarte.h}!lecteurcarte\_initialiser\_lecteur@{lecteurcarte\_initialiser\_lecteur}}
+\index{lecteurcarte\_initialiser\_lecteur@{lecteurcarte\_initialiser\_lecteur}!lecteurcarte.h@{lecteurcarte.h}}
+\doxysubsubsection{\texorpdfstring{lecteurcarte\_initialiser\_lecteur()}{lecteurcarte\_initialiser\_lecteur()}}
+{\footnotesize\ttfamily void lecteurcarte\+\_\+initialiser\+\_\+lecteur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cette fonction permet d\textquotesingle{}initialiser le port sur le lecteur. 
+
+Cette fonction est déjà écrite par le prof elle est juste exploitée dans notre code \begin{DoxyReturn}{Renvoie}
 void 
 \end{DoxyReturn}
 \mbox{\Hypertarget{lecteurcarte_8h_a8c26ccbf49b09f1ee42250d71a7a0daa}\label{lecteurcarte_8h_a8c26ccbf49b09f1ee42250d71a7a0daa}} 

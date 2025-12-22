@@ -1,6 +1,7 @@
 
 *.tex 
-
+*_incl.pdf
+*.md5
 *.o
 
 html/

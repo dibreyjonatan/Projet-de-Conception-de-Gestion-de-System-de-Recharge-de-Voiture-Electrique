@@ -8,7 +8,7 @@
 /** 
 *@brief Cette fonction permet d'initialiser le port sur le lecteur 
 *@details
-* Cette fonction est déjà écrite par le prof elle est juste implementer 
+* Cette fonction est déjà écrite par le prof elle est juste exploitée dans notre code
 *@return void 
 */
 void lecteurcarte_initialiser_lecteur()

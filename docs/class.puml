@@ -1,0 +1,76 @@
+@startuml 
+/' Style strictuml pour un diagramme plus lisible '/
+skinparam style strictuml
+/'Pour avoir un diagramme de classe orthogonal '/
+skinparam linetype ortho
+/'Pour ne pas afficher les icônes des attributs '/
+skinparam classAttributeIconSize 0 
+/'horizontal spacing'/
+skinparam nodesep 200
+/'vertical spacing'/
+skinparam ranksep  50
+class "Timer"{
+    depart_timer : time_t
+
+    +timer_raz()
+    + int timer_valeur()
+    + int timer_count_sec()
+
+}
+class "lecteur_carte"{
+    + void lecteurcarte_initaliser_lecteur()
+    + void lecteurcarte_initialiser()
+    + int lecteurcarte_lire_carte()
+}
+class "Voyants"{
+
+   + void voyant_set_dispo(led)
+   + void voyant_set_charge(led)
+   + void voyant_blink_charge()
+   +void voyant_set_defaut(led)
+   + void voyant_blink_default()
+   +void  voyant_set_prise(led)
+   +void voyant_set_trappe(led)
+    
+}
+class "Prise"{
+    +void prise_deverouille_trappe()
+    +void prise_verouille_trappe()
+    + void prise_set_prise()
+}
+    
+class "base_clients"{
+    + int baseclient_authentifier(int)
+    + void baseclient_ajoutclient(int)
+    + void baseclient_supprimerclient(int)
+    
+    
+}
+class "bouton"{
+    + int bouton_appuie_button_charge()
+    + int bouton_appuie_button_stop()
+    + void bouton_set_bouton_charge()
+    + void bouton_set_bouton_stop()
+}
+class "Generateur_save"{
+    + int generateur_save_tension_DC()
+    + void generateur_save_generer_pwm(pwm)
+    +void generateur_save_fermer_contacteur()
+    +void generateur_save_ouvrir_contacteur()
+}
+/' Les relations'/
+Generateur_save "1"-down-> "1" Prise : verouiller/déverouiller trappe
+Generateur_save "1"-up-> "1" Voyants : controler voyants
+
+
+/'Generateur_save "1"-> "1" Timer : utiliser timer'/
+
+Generateur_save "1"-left->"1" bouton : accede
+
+lecteur_carte "1"-left-> "1" bouton : accede
+lecteur_carte "1"-up-> "1" base_clients : verifier authentification
+lecteur_carte "1"--> "1" Voyants : pilote
+lecteur_carte "1"--> "1" Generateur_save : commande
+
+
+@enduml

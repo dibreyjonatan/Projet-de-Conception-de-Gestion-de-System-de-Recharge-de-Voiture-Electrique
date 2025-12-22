@@ -1,0 +1,83 @@
+@startuml 
+skinparam style strictuml
+[*] --> etat0
+state "<b> Etat 0 </b> \n <i>Initialisation et authentification </i>" as etat0
+state "<b> Etat 1 </b> \n <i> Attente prise branchée </i>" as etat1
+state "<b> Etat 2 </b> \n <i>Prise branchée </i>" as etat2
+state "<b> Etat 3 </b> \n <i> Charge en cours </i>" as etat3
+state "<b> Etat 4 </b> \n <i> Batterie chargée </i>" as etat4
+state "<b> Etat 5 </b> \n <i> Reprise véhicule </i>" as etat5
+state "<b> Etat 6 </b> \n <i> Ré-initilisation </i>" as etat6
+state "<b> Etat 225 </b> \n <i> Administration système </i>" as etat225
+
+etat0 -down-> etat1 : Délai respecté
+etat0 -> etat225 : Id admin
+etat1 -down-> etat2 : DC 9V 
+etat2 -down-> etat3 : AC 6V
+etat2 -down-> etat5 : STOP
+etat3 -> etat4 : DC 9V
+etat3 -down-> etat5 : STOP
+etat4 -> etat5 : DC 12V
+etat4 -> etat5 : STOP
+etat5 -> etat6 : DC 12V
+etat6 -> etat0 : Finetat6
+etat225 -> etat0 : Fin admin
+
+etat0 -left-> etat0 : Timeout
+
+/'---------------------------------------- Detailed states ---------------------------------------
+'/
+
+etat0 : Enter(lecteur_initialisation())\n Enter(lecteur_carte()) \n Do(Apuie_bouton()) \n Do(set_dispo(ON))\n Do(set_charge(OFF)) \n Do(set_prise(OFF))
+
+state etat225{
+    [*] --> choix_admin
+    choix_admin : Do(afficher_menu_admin())
+    choix_admin --> Ajout_client
+    choix_admin --> Supp_client
+    choix_admin --> Modif_client
+    
+    Ajout_client : Enter(enregistre_carteclient())
+    Supp_client : Enter(supprime_carteclient())
+    Modif_client : Enter(modifie_info_client())
+
+    Ajout_client -->  [*] 
+    Supp_client -->  [*]
+    Modif_client -->  [*]
+}
+
+etat1 : Enter(voyant_set_charge(ROUGE))\n Enter(voyant_set_dispo(OFF))\nDo(generateur_save_genererer_PWM(DC))\nEnter(prise_deverouille_trappe())
+etat2 : Enter(voyant_set_prise(VERT)) \n Do(generer_AC(1kHz)) \n Do(verouille_trappe())
+etat3 : Do(generer_PWM(ACL)) \n Enter(fermer_contacteur_AC()) 
+etat4 : Enter(ouvrir_contacteur_AC()) \n Enter(voyant_set_charge(VERT))\nEnter(prise_deverouille_trappe())\nDo(generateur_save_genererer_PWM(DC))
+etat5 : Enter(voyant_set_prise(OFF)) \n Do(deverouille_trappe()) \n Do(set_dispo(ON)) \n Do(authentication())
+etat6 : Do(ouvrir_contacteur_AC()) \n Do(set_charge(OFF)) \n Do(set_prise(OFF))\n Do(set_dispo(ON)) \n Do(generateur_save_genererer_PWM(STOP))
+/'---------------------------------------- Detailed states ---------------------------------------  
+'/
+
+/'
+state Borne_disponible : Do(set_dispo(ON)),\n Enter(authentication(int))
+Borne_disponible -->Attente_prise : [authentication et delai reglé]
+state Attente_prise : Do(set_charge(ROUGE)), Do(Deverouille_trappe()) \n Do(tension(12V)), Do(set_dispo(OFF))
+
+Attente_prise --> Prise_branchée : [DC 9V]
+state Prise_branchée :  Do(set_prise(VERT)), Do(verouille_trappe())\n  Do(generer_AC(1kHz))
+
+Prise_branchée --> Attente_S2_Vehicule : [AC 9V]
+state Attente_S2_Vehicule : Do(generer_AC())
+Prise_branchée --> Batterie_chargée :Entered(STOP)
+
+Attente_S2_Vehicule --> Charge  : [AC 6V]
+state Charge : Do(fermer_AC())\n Do(generer_PWM(+6V/-12V))
+Attente_S2_Vehicule --> Batterie_chargée : Entered(STOP)
+Charge --> Batterie_chargée : [AC 9V] ou Entered(STOP)
+state Batterie_chargée : Do(arret_PWM()), Do(set_charge(VERT))
+Batterie_chargée --> retrait_prise : [deconnecter] 
+state retrait_prise :  Do(ouvrir_contacteur_AC())\n Do(déverouiller())
+
+retrait_prise --> prise_debranché : [12V]
+state prise_debranché : Do(set_charge(OFF), \n set_prise(OFF) set_dispo(ON))
+
+prise_debranché --> [*] 
+'/
+@enduml

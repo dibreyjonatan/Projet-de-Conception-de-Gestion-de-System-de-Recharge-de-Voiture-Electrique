@@ -1,6 +1,6 @@
-#include "voyant.hpp"
+#include "voyant.h"
 
-void Voyant::Voyant(){
+Voyant::Voyant(){
     int shmid ;
     io=acces_memoire(&shmid) ;
 }

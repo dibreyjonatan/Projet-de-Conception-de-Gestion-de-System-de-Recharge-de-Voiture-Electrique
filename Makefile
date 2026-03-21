@@ -14,22 +14,23 @@
 TARGET = borne
 CC = g++
 CFLAGS = -Wall -O -g 
+
 #Version materielle
-INCLDIRS = -I . -I /shared/TCii/include
-LIBDIRS = -L /shared/TCii/lib
+INCLDIRS =
+LIBDIRS = 
 
 #dependance librairie libsmartcard_borne (voir git)
-LIBS64 = -lsmartcardcpp_borne_x64 -lpcsclite
+LIBS64 = -lsmartcardcpp_borne_x64 
 
 SRCS = $(wildcard *.cpp)
 
 OBJS = ${SRCS:.cpp=.o} 
 
 $(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) $(INCLDIRS) $(LIBDIRS) -o $@ $(OBJS) $(LIBS64)
+	$(CC) $(CFLAGS) $(INCLDIRS) -o $@ $(OBJS) $(LIBS64)
 
 $(OBJS):
-	$(CC) $(CFLAGS) $(INCLDIRS) $(LIBDIRS) -c $*.cpp
+	$(CC) $(CFLAGS) $(INCLDIRS) -c $*.cpp
 
 depend:
 	$(CC) -MM $(SRCS) $(INCLDIRS) > Makefile.dep

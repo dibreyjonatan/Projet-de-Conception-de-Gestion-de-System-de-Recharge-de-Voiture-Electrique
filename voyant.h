@@ -13,14 +13,14 @@
 #ifndef IOSTREAM
 #define IOSTREAM
 #include <iostream>
-using namespace std
+using namespace std ;
 #endif
 
 class Voyant{
     private :
         entrees* io ;
     public:
-        void Voyant();
+        Voyant();
         void voyant_set_dispo(led dispo);
         void voyant_set_charge(led charge);
         void voyant_blink_charge() ;

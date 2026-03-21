@@ -4,7 +4,7 @@
 #ifndef IOSTREAM
 #define IOSTREAM
 #include <iostream>
-using namespace std
+using namespace std;
 #endif
 class LecteurCarte{
    public :

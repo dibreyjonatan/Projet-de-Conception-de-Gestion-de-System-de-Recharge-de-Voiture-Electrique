@@ -1,5 +1,5 @@
-#include "lecteurcarte.hpp"
-
+#include "lecteurcarte.h"
+#include "voyant.h"
 
 int main (){
        // creation des objets 

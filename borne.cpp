@@ -49,8 +49,10 @@ typedef enum { etat0, etat1, etat2, etat3, etat4, etat5, etat6,etat255 } etatsys
  * @return void
  */
 void administration_operateur(); 
-Baseclient baseclient;
 
+// Creation des Objets globales qui seront vu par la fonction administration_operateur
+Baseclient baseclient;
+LecteurCarte lecteurcarte;
 /**
  * @brief Fonction principale du système — implémentation de la machine à états
  *        décrivant le comportement complet de la borne de recharge.
@@ -123,8 +125,7 @@ Baseclient baseclient;
  *           la boucle infinie étant intentionnelle).
  */
 int main (){
-       // creation des objets 
-       LecteurCarte lecteurcarte;
+       // creation des objets en local
        Voyant voyant ;
        Prise prise ;
        Timer timer;

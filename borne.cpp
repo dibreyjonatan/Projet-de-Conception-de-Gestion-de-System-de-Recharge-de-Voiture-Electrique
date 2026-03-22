@@ -28,8 +28,100 @@
 
 typedef enum { etat0, etat1, etat2, etat3, etat4, etat5, etat6,etat255 } etatsystem ;
 
+/**
+ * @brief Fonction chargée de gérer l'administration des clients 
+ *        une fois que l'opérateur met son id.
+ * @note Cette fonction est utilisée pour le cas etat255.
+ * @details
+ * Cette fonction affiche un menu à l'opérateur avec les opérations disponibles :
+ * - Ajouter un client (choix 1) : demande le numéro de carte et le nom du client,
+ *   puis appelle baseclient_ajoutclient(int, string).
+ * - Supprimer un client (choix 2) : demande le numéro de carte du client,
+ *   puis appelle baseclient_supprimeclient(int).
+ * - Afficher tous les clients (choix 3) : appelle baseclient_afficher_clients().
+ * - Modifier un client (choix 4) : demande le numéro de carte du client à modifier,
+ *   puis appelle baseclient_modifierclient(int). L'opérateur peut modifier
+ *   le nom, le numéro de carte, ou les deux.
+ * @par Variables internes utilisées :
+ * @li c   : variable de type int pour stocker le choix de l'opération.
+ * @li num : variable de type int pour stocker le numéro de carte du client.
+ * @li nom : variable de type std::string pour stocker le nom du client (ajout uniquement).
+ * @return void
+ */
 void administration_operateur(); 
 Baseclient baseclient;
+
+/**
+ * @brief Fonction principale du système — implémentation de la machine à états
+ *        décrivant le comportement complet de la borne de recharge.
+ *
+ * @note Une boucle infinie est volontairement maintenue : la borne doit rester
+ *       opérationnelle en permanence, sans interruption entre deux sessions de charge.
+ *
+ * @details
+ * Le main orchestre l'ensemble du cycle de vie de la borne en s'appuyant sur
+ * une machine à états finie (FSM), implémentée via un switch-case sur le type
+ * énuméré @c etatsystem. À chaque tour de boucle, @c etat_present prend la
+ * valeur de @c etat_suivant, ce qui provoque la transition vers l'état suivant.
+ *
+ * Les objets instanciés en début de fonction représentent chacun un composant
+ * physique de la borne :
+ * @li **LecteurCarte lecteurcarte** : lecture des cartes RFID — point d'entrée
+ *     obligatoire du cycle, aucune action n'est possible sans carte valide.
+ * @li **Voyant voyant** : pilotage des voyants lumineux informant l'utilisateur
+ *     de l'état courant (disponible, en charge, défaut).
+ * @li **Prise prise** : contrôle de la trappe et de la prise de charge,
+ *     verrouillée durant la charge pour des raisons de sécurité.
+ * @li **Timer timer** : mesure du temps écoulé en secondes, utilisé pour
+ *     la temporisation de 60 secondes en attente d'appui bouton.
+ * @li **Generateur_Save generateur_save** : pilotage du signal PWM et du
+ *     contacteur AC selon la phase de charge (DC, AC_1K, AC_CL, STOP).
+ * @li **Bouton bouton** : lecture des boutons physiques CHARGE et STOP,
+ *     ce dernier pouvant interrompre la charge depuis les états 2, 3 et 4.
+ *
+ * Les états de la machine sont les suivants :
+ * @li **etat0**   : lecture de la carte RFID et authentification du client.
+ *                   Si le client est reconnu, il dispose de 60 secondes pour
+ *                   appuyer sur le bouton CHARGE afin de démarrer le cycle.
+ * @li **etat1**   : initialisation du cycle de charge — déverrouillage de la
+ *                   trappe et attente du branchement de la prise par le client.
+ * @li **etat2**   : prise branchée — verrouillage de la trappe, passage en
+ *                   mode AC et ouverture du contacteur.
+ * @li **etat3**   : charge active du véhicule — fermeture du contacteur et
+ *                   surveillance de la tension DC jusqu'en fin de charge.
+ * @li **etat4**   : fin de charge — re-authentification du client requise
+ *                   avant de pouvoir récupérer son véhicule.
+ * @li **etat5**   : récupération du véhicule — déverrouillage de la trappe,
+ *                   extinction de la prise et attente du débranchement.
+ * @li **etat6**   : remise en disponibilité de la borne pour le client suivant.
+ * @li **etat255** : mode administration — réservé à l'opérateur pour la
+ *                   gestion de la base clients (ajout, suppression, modification).
+ *
+ * @warning L'état initial auquel fait référence @c etat6 est différent de
+ *          @c etat0 dans le sens où il s'agit d'un état de réinitialisation
+ *          matérielle de la borne (contacteur ouvert, PWM stoppé, voyant
+ *          disponible allumé), tandis que @c etat0 représente l'attente active
+ *          d'un client avec lecture de carte.
+ *
+ * @par Variables internes utilisées :
+ * @li **etat_present** : de type @c etatsystem, stocke l'état courant du système.
+ * @li **etat_suivant** : de type @c etatsystem, stocke l'état vers lequel transiter.
+ * @li **numero**       : entier int stockant le numéro lu par le lecteur de carte RFID.
+ * @li **found**        : entier int stockant le résultat de l'authentification
+ *                        (1 = client reconnu, 0 = échec).
+ * @li **timer_secs**   : entier int comptabilisant les secondes écoulées
+ *                        durant la temporisation de 60 secondes.
+ * @li **butt_apuie**   : entier int indiquant si le bouton CHARGE a été appuyé
+ *                        (0 = appuyé, 1 = non appuyé).
+ * @li **id**           : entier int servant d'indicateur pour la re-authentification
+ *                        lors de la reprise du véhicule (0 = non authentifié, 1 = ok).
+ * @li **data**         : entier int stockant le numéro saisi par le client
+ *                        lors de la re-authentification en etat4 et etat5.
+ *
+ * @return int
+ * @retval 0 en cas de succès d'exécution (jamais atteint en pratique,
+ *           la boucle infinie étant intentionnelle).
+ */
 int main (){
        // creation des objets 
        LecteurCarte lecteurcarte;

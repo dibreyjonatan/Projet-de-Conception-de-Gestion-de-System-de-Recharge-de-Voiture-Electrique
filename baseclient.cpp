@@ -1,6 +1,6 @@
 #include "baseclient.h"
 
-int Baseclient::baseclient_authentifier(int){
+int Baseclient::baseclient_authentifier(int num){
  std::ifstream fich("database.txt");
     if (!fich.is_open()) {
         std::cerr << "Erreur d'ouverture du fichier\n";
@@ -17,7 +17,7 @@ int Baseclient::baseclient_authentifier(int){
     fich.close();
     return 0;
 }
-void Baseclient::baseclient_ajoutclient(int){
+void Baseclient::baseclient_ajoutclient(int k){
  if (k == 255) {
         std::cout << "Vous ne pouvez pas ajouter ce numéro\n";
         return;
@@ -37,7 +37,7 @@ void Baseclient::baseclient_ajoutclient(int){
     fich.close();
 
 }
-void Baseclient::baseclient_supprimeclient(int){
+void Baseclient::baseclient_supprimeclient(int k){
      std::ifstream fich("database.txt");
     std::ofstream tmp_data("temp.txt");
 

@@ -1,7 +1,6 @@
 #ifndef GENERATEUR_SAVE_H
 #define GENERATEUR_SAVE_H
 
-#include <stdio.h>
 #include <donnees_borne.h>
 #include <memoire_borne.h>
 

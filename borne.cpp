@@ -252,7 +252,7 @@ int main (){
                 if(id==0){
 
              cout<<"veuillez vous authentifier à nouveau pour récupérer votre véhicule \n";
-             cin>>data;
+             data=lecteurcarte.lecteurcarte_lire_carte();
             if(numero!= data) {
             etat_suivant=etat4;   
               break ; 
@@ -280,7 +280,7 @@ int main (){
             if(id==0){
 
             cout<<"veuillez vous authentifier à nouveau pour récupérer votre véhicule \n";
-            cin>>data;
+            data=lecteurcarte.lecteurcarte_lire_carte();
             if(numero!= data) {
             etat_suivant=etat5;   
               break ;
@@ -330,14 +330,14 @@ void administration_operateur() {
 
     if (c == 1) {
         cout << "Numéro de carte : ";
-        int num; cin >> num;
+        int num=lecteurcarte.lecteurcarte_lire_carte();
         cout << "Nom du client : ";
         cin.ignore();
         getline(std::cin, nom);
         baseclient.baseclient_ajoutclient(num, nom);
     }
     if (c == 2) {
-        cout << "Numéro de carte à supprimer : ";
+        cout << "Veuillez saisir le numéro de la carte à supprimer : ";
         int num; cin >> num;
         baseclient.baseclient_supprimeclient(num);
     }
@@ -345,7 +345,7 @@ void administration_operateur() {
         baseclient.baseclient_afficher_clients();
     }
     if (c == 4) {                                   
-        cout << "Numéro de carte du client à modifier : ";
+        cout << "Veuillez saisir le numéro de la carte du client à modifier : ";
         int num; cin >> num;
         baseclient.baseclient_modifierclient(num);
     }

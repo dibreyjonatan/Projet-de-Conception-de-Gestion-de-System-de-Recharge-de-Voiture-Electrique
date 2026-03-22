@@ -22,7 +22,7 @@ int main (){
        etatsystem etat_present, etat_suivant ;
        etat_present=etat_suivant=etat0 ;
        int id=0,data ; //pour la reprise vehicule //id pour le nombre de fois qu'il va interroger le client  // data pour la lecture 
-       int numero, found,  timer_secs=0 ;  
+       int numero, found,  timer_secs=0 , butt_apuie=1 ;  
        bouton.bouton_set_bouton_stop();
        
         // initialisation du port de lecteur de carte
@@ -59,7 +59,7 @@ int main (){
           // initialisation de temporisation 
           timer.timer_raz();
           // detection apuie button en 60s
-            int butt_apuie=1 ;
+            butt_apuie=1 ;
           while(timer_secs<60 && butt_apuie==1){
            cout<<"secondes recu du timer : \n"<<timer_secs ; 
            timer_secs+=timer.timer_count_sec() ;

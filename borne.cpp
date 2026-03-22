@@ -33,7 +33,7 @@ int main (){
       case etat0 :
         lecteurcarte.lecteurcarte_initialiser();
         numero=lecteurcarte.lecteurcarte_lire_carte();
-        cout<<"numero lu est : \n"<<numero; 
+        cout<<"numero lu est :"<<numero<<"\n"; 
 
         if(numero==255){
          
@@ -42,7 +42,7 @@ int main (){
         }
         
         found=baseclient.baseclient_authentifier(numero);
-        cout<<"resultat authentification : \n"<<found ;
+        cout<<"resultat authentification : "<<found<<"\n" ;
         // echec d'authentification
         if(found==0) {
         // clignoter voyant defaut 8s en cas d'erreur
@@ -61,7 +61,7 @@ int main (){
           // detection apuie button en 60s
             butt_apuie=1 ;
           while(timer_secs<60 && butt_apuie==1){
-           cout<<"secondes recu du timer : \n"<<timer_secs ; 
+           cout<<"secondes recu du timer : "<<timer_secs<<"\n" ; 
            timer_secs+=timer.timer_count_sec() ;
              int sortie=bouton.bouton_appuie_button_charge();
               if(sortie==1 ) {

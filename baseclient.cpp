@@ -84,7 +84,7 @@ void Baseclient::baseclient_afficher_clients() {
                   << "  →  " << c.nom << "\n";
     }
    
-
+}
 
 void Baseclient::baseclient_modifierclient(int num) {
     auto it = find_if(clients.begin(), clients.end(),

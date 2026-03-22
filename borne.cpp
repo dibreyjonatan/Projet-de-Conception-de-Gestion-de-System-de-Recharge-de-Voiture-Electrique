@@ -22,7 +22,8 @@ int main (){
        etatsystem etat_present, etat_suivant ;
        etat_present=etat_suivant=etat0 ;
        int id=0,data ; //pour la reprise vehicule //id pour le nombre de fois qu'il va interroger le client  // data pour la lecture 
-        bouton.bouton_set_bouton_stop();
+       int numero, found,  timer_secs=0 ;  
+       bouton.bouton_set_bouton_stop();
        
         // initialisation du port de lecteur de carte
         lecteurcarte.lecteurcarte_initialiser_lecteur();
@@ -31,7 +32,7 @@ int main (){
        switch(etat_present){
       case etat0 :
         lecteurcarte.lecteurcarte_initialiser();
-        int numero=lecteurcarte.lecteurcarte_lire_carte();
+        numero=lecteurcarte.lecteurcarte_lire_carte();
         cout<<"numero lu est : \n"<<numero; 
 
         if(numero==255){
@@ -40,7 +41,7 @@ int main (){
          break ; 
         }
         
-        int found=baseclient.baseclient_authentifier(numero);
+        found=baseclient.baseclient_authentifier(numero);
         cout<<"resultat authentification : \n"<<found ;
         // echec d'authentification
         if(found==0) {
@@ -54,7 +55,7 @@ int main (){
          //consigne client 
          cout<<"vous disposez de 1 minute pour appuyer sur charge\n";
         // temporisation de 1 minutes 
-          int timer_secs=0 ;
+          timer_secs=0 ;
           // initialisation de temporisation 
           timer.timer_raz();
           // detection apuie button en 60s
@@ -199,6 +200,7 @@ int main (){
             administration_operateur();
             etat_suivant=etat0 ;
             break ;
+
                  }
             etat_present=etat_suivant ;       
     }

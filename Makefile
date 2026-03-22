@@ -13,7 +13,7 @@
 
 TARGET = borne
 CC = g++
-CFLAGS = -Wall -O -g 
+CFLAGS = -Wall -Werror -O -g 
 
 #Version materielle
 INCLDIRS =

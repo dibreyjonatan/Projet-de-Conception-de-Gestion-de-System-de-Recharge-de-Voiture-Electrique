@@ -1,71 +1,64 @@
 #include "baseclient.h"
 
-int Baseclient::baseclient_authentifier(int num){
- std::ifstream fich("database.txt");
+Baseclient::Baseclient() {
+    charger();
+}
+
+void Baseclient::charger() {
+    clients.clear();
+    std::ifstream fich(fichier);
     if (!fich.is_open()) {
         std::cerr << "Erreur d'ouverture du fichier\n";
-        return 0;
+        return;
     }
-
-    int numero_r;
-    while (fich >> numero_r) {
-        if (numero_r == num) {
-            fich.close();
-            return 1;
-        }
+    int val;
+    while (fich >> val) {
+        clients.push_back(val);   // on remplit le vector
     }
     fich.close();
-    return 0;
 }
-void Baseclient::baseclient_ajoutclient(int k){
- if (k == 255) {
+
+
+void Baseclient::sauvegarder() {
+    std::ofstream fich(fichier);
+    if (!fich.is_open()) {
+        std::cerr << "Erreur d'ouverture du fichier\n";
+        return;
+    }
+    for (int c : clients) {
+        fich << c << "\n";        // on réécrit tout le vector
+    }
+    fich.close();
+}
+
+int Baseclient::baseclient_authentifier(int num) {
+    auto it = std::find(clients.begin(), clients.end(), num);
+    return (it != clients.end()) ? 1 : 0;
+}
+
+
+void Baseclient::baseclient_ajoutclient(int k) {
+    if (k == 255) {
         std::cout << "Vous ne pouvez pas ajouter ce numéro\n";
         return;
     }
-
     if (baseclient_authentifier(k)) {
-        std::cout << "\nLe client que vous essayez d'ajouter figure déjà dans la liste\n";
+        std::cout << "Le client figure déjà dans la liste\n";
         return;
     }
-
-    std::ofstream fich("database.txt", std::ios::app);
-    if (!fich.is_open()) {
-        std::cerr << "Erreur d'ouverture du fichier\n";
-        return;
-    }
-    fich << k << "\n";
-    fich.close();
-
+    clients.push_back(k);   // ajout dans le vector
+    sauvegarder();           // puis on met à jour le fichier
+    std::cout << "Client " << k << " ajouté avec succès\n";
 }
-void Baseclient::baseclient_supprimeclient(int k){
-     std::ifstream fich("database.txt");
-    std::ofstream tmp_data("temp.txt");
 
-    if (!fich.is_open() || !tmp_data.is_open()) {
-        std::cerr << "Erreur d'ouverture de la base de données ou du fichier temporaire\n";
+
+void Baseclient::baseclient_supprimeclient(int k) {
+    auto it = std::find(clients.begin(), clients.end(), k);
+    if (it == clients.end()) {
+        std::cout << "Le client ne figure pas dans la base de données\n";
         return;
     }
-
-    int val;
-    bool found = false;
-
-    while (fich >> val) {
-        if (val == k) {
-            found = true;
-        } else {
-            tmp_data << val << "\n";
-        }
-    }
-
-    fich.close();
-    tmp_data.close();
-
-    std::remove("database.txt");
-    std::rename("temp.txt", "database.txt");
-
-    if (found) {
-        std::cout << "Suppression avec succès\n";
-    } else {
-        std::cout << "Le client que vous voulez supprimer ne figure pas dans la base de données\n";
-    }
+    clients.erase(it);   // suppression dans le vector
+    sauvegarder();        // puis on met à jour le fichier
+    std::cout << "Suppression avec succès\n";
 }

@@ -1,3 +1,17 @@
+/**
+ * 
+ * @file    borne.cpp
+ * @brief   Fichier principal du système de borne de recharge
+ *  Ce fichier contient les objets de chaque classe.
+ *
+ * @authors
+ *   - KAMDA TEZEBO DIBREY JONATAN
+ *   - Nassime BOUANANI
+ *
+ * @version 1.0
+ * @date    30/03/2026
+ * 
+ */
 #include "lecteurcarte.h"
 #include "voyant.h"
 #include "baseclient.h"
@@ -5,6 +19,12 @@
 #include "bouton.h"
 #include "prise.h"
 #include "generateur_save.h"
+
+
+/**
+ * @brief Définition des états du système de recharge
+ *  On déclare une énumération pour représenter les différents états du système de recharge de véhicule électrique.
+ */
 
 typedef enum { etat0, etat1, etat2, etat3, etat4, etat5, etat6,etat255 } etatsystem ;
 
@@ -206,24 +226,35 @@ int main (){
     }
     return 0 ;
 }
-void administration_operateur(){
+void administration_operateur() {
+    int c;
+    string nom;
+    cout << "Bienvenue Operateur\n";
+    cout << "1 - Ajouter un client\n";
+    cout << "2 - Supprimer un client\n";
+    cout << "3 - Afficher tous les clients\n";
+    cout << "4 - Modifier un client\n";        
+    cin >> c;
 
-  int c ;
-  cout<<"Bienvenue Operateur : \n";
-  cout<<" Tapez 1, si vous voulez ajouter un nouveau client \n";
-  cout<<"Tapez 2, si vous voulez supprimer un client \n";
-  cout<<"Entrez votre choix : ";
-  cin>>c;
-
-  if(c==1){
-    cout<<"\n Veuillez entrer le numero du client à ajouter\n";
-    cin>>c;
-    baseclient.baseclient_ajoutclient(c);
-  }
-  if(c==2){
-    cout<<"\n Veuillez entrer le numero du client à supprimer\n";
-    cin>>c;
-   baseclient.baseclient_supprimeclient(c);
-  }
+    if (c == 1) {
+        cout << "Numéro de carte : ";
+        int num; cin >> num;
+        cout << "Nom du client : ";
+        cin.ignore();
+        getline(std::cin, nom);
+        baseclient.baseclient_ajoutclient(num, nom);
+    }
+    if (c == 2) {
+        cout << "Numéro de carte à supprimer : ";
+        int num; cin >> num;
+        baseclient.baseclient_supprimeclient(num);
+    }
+    if (c == 3) {
+        baseclient.baseclient_afficher_clients();
+    }
+    if (c == 4) {                                   
+        cout << "Numéro de carte du client à modifier : ";
+        int num; cin >> num;
+        baseclient.baseclient_modifierclient(num);
+    }
 }
-

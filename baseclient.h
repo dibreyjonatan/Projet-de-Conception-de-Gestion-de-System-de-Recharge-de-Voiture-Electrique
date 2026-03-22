@@ -12,17 +12,29 @@
 using namespace std ;
 #endif
 
-class Baseclient{
-    private :
-    std::vector<int> clients;        // cache mémoire
-    const std::string fichier = "database.txt";
-
-    void charger();                  // lit le fichier → vector
-    void sauvegarder();              // écrit le vector → fichier
-    public :
-        Baseclient();       
-        int baseclient_authentifier(int);
-        void baseclient_ajoutclient(int);
-        void baseclient_supprimeclient(int);
+struct Client {
+    int numero;
+    string nom;
 };
+
+class Baseclient {
+private:
+    vector<Client> clients;
+    const string fichier = "database.txt";
+
+    void charger();
+    void sauvegarder();
+
+public:
+    Baseclient();
+    int  baseclient_authentifier(int num);
+    void baseclient_ajoutclient(int num, string nom);
+    void baseclient_supprimeclient(int num);
+    void baseclient_afficher_clients();   
+    void baseclient_modifierclient(int num);
+};
+
 #endif 
+
+
+

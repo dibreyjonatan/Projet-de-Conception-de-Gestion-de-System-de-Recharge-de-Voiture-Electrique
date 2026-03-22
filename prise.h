@@ -12,9 +12,9 @@ using namespace std ;
 #endif
 
 class Prise{
-    Private :
+    private :
        entrees* io_p ;
-    Public :
+    public :
         Prise();
         void prise_verrouille_trappe() ;
         void prise_deverrouille_trappe() ;

@@ -1,0 +1,52 @@
+#---------------------------------------------------------------------------
+# Informations du projet
+#---------------------------------------------------------------------------
+PROJECT_NAME           = "Projet de Gestion de Borne de Recharge de Véhicule Électrique en C++"
+PROJECT_NUMBER         = 1.0
+PROJECT_BRIEF          = "Système de gestion de borne de recharge pour véhicule électrique"
+OUTPUT_DIRECTORY       = ./doc
+
+#---------------------------------------------------------------------------
+# Configuration de l'extraction
+#---------------------------------------------------------------------------
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_GLOBALS        = YES
+RECURSIVE              = YES
+
+#---------------------------------------------------------------------------
+# Fichiers sources à analyser
+#---------------------------------------------------------------------------
+INPUT                  = .
+FILE_PATTERNS          = *.cpp *.h 
+EXCLUDE_PATTERNS       =  */.git/* 
+
+#---------------------------------------------------------------------------
+# Langue de la documentation
+#---------------------------------------------------------------------------
+OUTPUT_LANGUAGE        = French
+
+#---------------------------------------------------------------------------
+# Génération HTML
+#---------------------------------------------------------------------------
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_TREEVIEW      = YES
+HTML_DYNAMIC_SECTIONS  = YES
+
+#---------------------------------------------------------------------------
+# Génération LaTeX (PDF)
+#---------------------------------------------------------------------------
+GENERATE_LATEX         = YES
+LATEX_OUTPUT           = latex
+PDF_HYPERLINKS         = YES
+USE_PDFLATEX           = YES
+
+#---------------------------------------------------------------------------
+# Diagrammes
+#---------------------------------------------------------------------------
+HAVE_DOT               = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+CLASS_DIAGRAMS         = YES

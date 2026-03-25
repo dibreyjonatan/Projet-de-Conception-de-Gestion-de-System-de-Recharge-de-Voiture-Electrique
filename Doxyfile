@@ -6,6 +6,9 @@ PROJECT_NUMBER         = 1.0
 PROJECT_BRIEF          = "Système de gestion de borne de recharge pour véhicule électrique"
 OUTPUT_DIRECTORY       = ./doc
 
+MARKDOWN_SUPPORT = YES
+IMAGE_PATH = ./state_charts.png ./class.png
+USE_MDFILE_AS_MAINPAGE = README.md
 #---------------------------------------------------------------------------
 # Configuration de l'extraction
 #---------------------------------------------------------------------------
@@ -19,7 +22,7 @@ RECURSIVE              = YES
 # Fichiers sources à analyser
 #---------------------------------------------------------------------------
 INPUT                  = .
-FILE_PATTERNS          = *.cpp *.h 
+FILE_PATTERNS          = *.cpp *.h  *.md
 EXCLUDE_PATTERNS       =  */.git/* 
 
 #---------------------------------------------------------------------------

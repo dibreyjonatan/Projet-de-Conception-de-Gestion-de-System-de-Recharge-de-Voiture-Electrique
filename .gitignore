@@ -1,2 +1,17 @@
 
 *.o
+# EXclusion de tous les fichiers dérivés produits
+*.md5
+*.pdf
+*.log
+*.out
+*.idx
+*.ilg
+*.ind
+*.aux
+*.toc
+*.sty
+*.tex
+doc/html/
+# On ne retient que le fichier finale
+!refman.pdf 

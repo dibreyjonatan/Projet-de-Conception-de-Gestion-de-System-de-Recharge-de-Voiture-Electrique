@@ -23,7 +23,7 @@
  *       en environnement matériel réel.
  */
 void LecteurCarte::lecteurcarte_initialiser_lecteur() {
-
+   initialisations_ports();
 }
 
 /**
@@ -59,6 +59,11 @@ void LecteurCarte::lecteurcarte_initialiser() {
  */
 int LecteurCarte::lecteurcarte_lire_carte() {
     int num ;
-    cin >> num ;
+    
+    attente_insertion_carte();
+    num=lecture_numero_carte();
+    cout<<" Numero lu : "<<num<<endl;
+    attente_retrait_carte();
+
     return num ;
 }

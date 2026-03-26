@@ -321,6 +321,20 @@ void Baseclient::baseclient_modifierclient(int num) {
               << it->numero << "  " << it->nom << "\n";
 }
 
+ /**
+ * @brief Récupère le numéro de la carte de l'administrateur.
+ * 
+ * Cette fonction retourne la valeur actuelle du numéro de carte de l'administrateur.
+ * Lorsque l'administrateur change sa carte, cette valeur est automatiquement mise à jour.
+ * 
+ * @details
+ * Le numéro d'administrateur est stocké dans l'attribut privé numAdmin de la classe Baseclient.
+ * Il est modifiable uniquement par les mécanismes internes de la classe lors du changement
+ * de carte de l'administrateur.
+ * 
+ * @return int Le numéro de la carte de l'administrateur.
+ */
+
 int Baseclient::get_numAdmin(){
     return numAdmin;
 }

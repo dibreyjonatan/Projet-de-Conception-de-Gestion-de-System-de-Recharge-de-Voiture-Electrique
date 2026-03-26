@@ -57,6 +57,7 @@ struct Client {
  **/
 class Baseclient {
 private:
+    int numAdmin=3456;
     vector<Client> clients;
     const string fichier = "database.txt";
 
@@ -70,6 +71,8 @@ public:
     void baseclient_supprimeclient(int num);
     void baseclient_afficher_clients();   
     void baseclient_modifierclient(int num);
+    int get_numAdmin();
+    
 };
 
 #endif 

@@ -321,6 +321,6 @@ void Baseclient::baseclient_modifierclient(int num) {
               << it->numero << "  " << it->nom << "\n";
 }
 
-int get_numAdmin(){
+int Baseclient::get_numAdmin(){
     return numAdmin;
 }

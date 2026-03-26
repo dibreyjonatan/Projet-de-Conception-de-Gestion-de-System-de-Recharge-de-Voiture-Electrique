@@ -148,7 +148,7 @@ int main (){
         numero=lecteurcarte.lecteurcarte_lire_carte();
         cout<<"numero lu est :"<<numero<<"\n"; 
 
-        if(numero==255){
+        if(numero==3456){
          
          etat_suivant=etat255 ;
          break ; 
@@ -330,7 +330,7 @@ void administration_operateur() {
     cin >> c;
 
     if (c == 1) {
-        cout << "Numéro de carte : ";
+        cout << "Numéro de carte à insérer : \n";
         int num=lecteurcarte.lecteurcarte_lire_carte();
         cout << "Nom du client : ";
         cin.ignore();

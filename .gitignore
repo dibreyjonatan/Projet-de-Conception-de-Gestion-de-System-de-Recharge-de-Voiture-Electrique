@@ -15,3 +15,4 @@
 doc/html/
 # On ne retient que le fichier finale
 !refman.pdf 
+.vscode

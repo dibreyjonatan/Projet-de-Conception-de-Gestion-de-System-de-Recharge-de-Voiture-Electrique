@@ -148,7 +148,7 @@ int main (){
         numero=lecteurcarte.lecteurcarte_lire_carte();
         cout<<"numero lu est :"<<numero<<"\n"; 
 
-        if(numero==3456){
+        if(numero==baseclient.get_numAdmin()){
          
          etat_suivant=etat255 ;
          break ; 

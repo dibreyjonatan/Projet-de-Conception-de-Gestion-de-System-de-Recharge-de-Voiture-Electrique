@@ -167,7 +167,7 @@ int Baseclient::baseclient_authentifier(int num) {
  * @return void
  */
 void Baseclient::baseclient_ajoutclient(int num, string nom) {
-    if (num == 255) {
+    if (num == 3456) {
         cout << "Vous ne pouvez pas ajouter ce numéro\n";
         return;
     }
@@ -302,8 +302,8 @@ void Baseclient::baseclient_modifierclient(int num) {
         cin >> nouveau_num;
 
         // vérifier que le nouveau numéro n'est pas déjà pris
-        if (nouveau_num == 255) {
-            cout << "Ce numéro est réservé, modification annulée\n";
+        if (nouveau_num == 3456) {
+            cout << "Impossible de l'ajouter \n";
             return;
         }
         auto doublon = find_if(clients.begin(), clients.end(),

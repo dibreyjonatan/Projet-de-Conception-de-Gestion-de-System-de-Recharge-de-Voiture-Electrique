@@ -167,7 +167,7 @@ int Baseclient::baseclient_authentifier(int num) {
  * @return void
  */
 void Baseclient::baseclient_ajoutclient(int num, string nom) {
-    if (num == 3456) {
+    if (num == get_numAdmin()) {
         cout << "Vous ne pouvez pas ajouter ce numéro\n";
         return;
     }
@@ -302,7 +302,7 @@ void Baseclient::baseclient_modifierclient(int num) {
         cin >> nouveau_num;
 
         // vérifier que le nouveau numéro n'est pas déjà pris
-        if (nouveau_num == 3456) {
+        if (nouveau_num == get_numAdmin()) {
             cout << "Impossible de l'ajouter \n";
             return;
         }
@@ -319,4 +319,8 @@ void Baseclient::baseclient_modifierclient(int num) {
     sauvegarder();
     cout << "Client modifié avec succès Carte n°" 
               << it->numero << "  " << it->nom << "\n";
+}
+
+int get_numAdmin(){
+    return numAdmin;
 }
